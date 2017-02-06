@@ -1,0 +1,24 @@
+{
+    "users": {
+        "user1": {
+            "employeeID": "employee1",
+            "password": "password1"
+        },
+        "user2": {
+            "employeeID": "employee2",
+            "password": "password2"
+        },
+        "user3": {
+            "employeeID": "employee3",
+            "password": "password3"
+        },
+        "user4": {
+            "employeeID": "employee4",
+            "password": "password4"
+        },
+        "user5": {
+            "employeeID": "employee5",
+            "password": "password5"
+        }
+    }
+}
