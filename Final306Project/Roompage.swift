@@ -14,17 +14,23 @@ class RoomPage: UITableViewController {
     var numberOfRows = 0
     var roomsArray = [String]()
     
+    var roomInt = Int()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        roomInt = 1
         
         parseJSON()
+        
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "oneRoompage") as! oneRoompage
+        myVC.intPassed = roomInt
+        navigationController?.pushViewController(myVC, animated: true)
     }
     
     func parseJSON() {
         let path : String = Bundle.main.path(forResource: "dataRoom", ofType: "json") as String!
         let roomData = NSData(contentsOfFile: path) as NSData!
         let readableJSON = JSON(data: roomData as! Data, options: JSONSerialization.ReadingOptions.mutableContainers, error: nil)
-        
         
         numberOfRows = readableJSON["rooms"].count
         

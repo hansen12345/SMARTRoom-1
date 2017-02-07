@@ -1,23 +1,23 @@
 {
     "users": {
         "user1": {
-            "employeeID": "employee1",
+            "employeeID": "garciapn",
             "password": "password1"
         },
         "user2": {
-            "employeeID": "employee2",
+            "employeeID": "StevenGlandsberg",
             "password": "password2"
         },
         "user3": {
-            "employeeID": "employee3",
+            "employeeID": "AlexHanson",
             "password": "password3"
         },
         "user4": {
-            "employeeID": "employee4",
+            "employeeID": "HenryNguyen",
             "password": "password4"
         },
         "user5": {
-            "employeeID": "employee5",
+            "employeeID": "JackBuckley",
             "password": "password5"
         }
     }
