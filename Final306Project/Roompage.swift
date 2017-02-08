@@ -14,14 +14,19 @@ class RoomPage: UITableViewController {
     var numberOfRows = 0
     var roomsArray = [String]()
     
+    
+    //DATA TEST
     var roomInt = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //DATA TEST
         roomInt = 1
         
         parseJSON()
         
+        //DATA TEST
         let myVC = storyboard?.instantiateViewController(withIdentifier: "oneRoompage") as! oneRoompage
         myVC.intPassed = roomInt
         navigationController?.pushViewController(myVC, animated: true)
