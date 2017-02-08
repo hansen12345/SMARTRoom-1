@@ -42,17 +42,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		41010AB01E2FEA32008CD9F0 /* Final306Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Final306Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		41010AB01E2FEA32008CD9F0 /* SMARTRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMARTRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41010AB31E2FEA32008CD9F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41010AB51E2FEA32008CD9F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		41010AB81E2FEA32008CD9F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		41010ABA1E2FEA33008CD9F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41010ABD1E2FEA33008CD9F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41010ABF1E2FEA33008CD9F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41010AC41E2FEA33008CD9F0 /* Final306ProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Final306ProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		41010AC41E2FEA33008CD9F0 /* SMARTRoomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SMARTRoomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41010AC81E2FEA33008CD9F0 /* Final306ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Final306ProjectTests.swift; sourceTree = "<group>"; };
 		41010ACA1E2FEA33008CD9F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41010ACF1E2FEA33008CD9F0 /* Final306ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Final306ProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		41010ACF1E2FEA33008CD9F0 /* SMARTRoomUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SMARTRoomUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41010AD31E2FEA33008CD9F0 /* Final306ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Final306ProjectUITests.swift; sourceTree = "<group>"; };
 		41010AD51E2FEA33008CD9F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		416010F11E2FF4850064F9C6 /* MainPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainPageView.swift; path = ../MainPageView.swift; sourceTree = "<group>"; };
@@ -109,9 +109,9 @@
 		41010AB11E2FEA32008CD9F0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				41010AB01E2FEA32008CD9F0 /* Final306Project.app */,
-				41010AC41E2FEA33008CD9F0 /* Final306ProjectTests.xctest */,
-				41010ACF1E2FEA33008CD9F0 /* Final306ProjectUITests.xctest */,
+				41010AB01E2FEA32008CD9F0 /* SMARTRoom.app */,
+				41010AC41E2FEA33008CD9F0 /* SMARTRoomTests.xctest */,
+				41010ACF1E2FEA33008CD9F0 /* SMARTRoomUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,9 +173,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		41010AAF1E2FEA32008CD9F0 /* Final306Project */ = {
+		41010AAF1E2FEA32008CD9F0 /* SMARTRoom */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 41010AD81E2FEA33008CD9F0 /* Build configuration list for PBXNativeTarget "Final306Project" */;
+			buildConfigurationList = 41010AD81E2FEA33008CD9F0 /* Build configuration list for PBXNativeTarget "SMARTRoom" */;
 			buildPhases = (
 				A830A1666B9FAEB542C90329 /* [CP] Check Pods Manifest.lock */,
 				41010AAC1E2FEA32008CD9F0 /* Sources */,
@@ -188,14 +188,14 @@
 			);
 			dependencies = (
 			);
-			name = Final306Project;
+			name = SMARTRoom;
 			productName = Final306Project;
-			productReference = 41010AB01E2FEA32008CD9F0 /* Final306Project.app */;
+			productReference = 41010AB01E2FEA32008CD9F0 /* SMARTRoom.app */;
 			productType = "com.apple.product-type.application";
 		};
-		41010AC31E2FEA33008CD9F0 /* Final306ProjectTests */ = {
+		41010AC31E2FEA33008CD9F0 /* SMARTRoomTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 41010ADB1E2FEA33008CD9F0 /* Build configuration list for PBXNativeTarget "Final306ProjectTests" */;
+			buildConfigurationList = 41010ADB1E2FEA33008CD9F0 /* Build configuration list for PBXNativeTarget "SMARTRoomTests" */;
 			buildPhases = (
 				41010AC01E2FEA33008CD9F0 /* Sources */,
 				41010AC11E2FEA33008CD9F0 /* Frameworks */,
@@ -206,14 +206,14 @@
 			dependencies = (
 				41010AC61E2FEA33008CD9F0 /* PBXTargetDependency */,
 			);
-			name = Final306ProjectTests;
+			name = SMARTRoomTests;
 			productName = Final306ProjectTests;
-			productReference = 41010AC41E2FEA33008CD9F0 /* Final306ProjectTests.xctest */;
+			productReference = 41010AC41E2FEA33008CD9F0 /* SMARTRoomTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		41010ACE1E2FEA33008CD9F0 /* Final306ProjectUITests */ = {
+		41010ACE1E2FEA33008CD9F0 /* SMARTRoomUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 41010ADE1E2FEA33008CD9F0 /* Build configuration list for PBXNativeTarget "Final306ProjectUITests" */;
+			buildConfigurationList = 41010ADE1E2FEA33008CD9F0 /* Build configuration list for PBXNativeTarget "SMARTRoomUITests" */;
 			buildPhases = (
 				41010ACB1E2FEA33008CD9F0 /* Sources */,
 				41010ACC1E2FEA33008CD9F0 /* Frameworks */,
@@ -224,9 +224,9 @@
 			dependencies = (
 				41010AD11E2FEA33008CD9F0 /* PBXTargetDependency */,
 			);
-			name = Final306ProjectUITests;
+			name = SMARTRoomUITests;
 			productName = Final306ProjectUITests;
-			productReference = 41010ACF1E2FEA33008CD9F0 /* Final306ProjectUITests.xctest */;
+			productReference = 41010ACF1E2FEA33008CD9F0 /* SMARTRoomUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -259,7 +259,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 41010AAB1E2FEA32008CD9F0 /* Build configuration list for PBXProject "Final306Project" */;
+			buildConfigurationList = 41010AAB1E2FEA32008CD9F0 /* Build configuration list for PBXProject "SMARTRoom" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -272,9 +272,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				41010AAF1E2FEA32008CD9F0 /* Final306Project */,
-				41010AC31E2FEA33008CD9F0 /* Final306ProjectTests */,
-				41010ACE1E2FEA33008CD9F0 /* Final306ProjectUITests */,
+				41010AAF1E2FEA32008CD9F0 /* SMARTRoom */,
+				41010AC31E2FEA33008CD9F0 /* SMARTRoomTests */,
+				41010ACE1E2FEA33008CD9F0 /* SMARTRoomUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -392,12 +392,12 @@
 /* Begin PBXTargetDependency section */
 		41010AC61E2FEA33008CD9F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 41010AAF1E2FEA32008CD9F0 /* Final306Project */;
+			target = 41010AAF1E2FEA32008CD9F0 /* SMARTRoom */;
 			targetProxy = 41010AC51E2FEA33008CD9F0 /* PBXContainerItemProxy */;
 		};
 		41010AD11E2FEA33008CD9F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 41010AAF1E2FEA32008CD9F0 /* Final306Project */;
+			target = 41010AAF1E2FEA32008CD9F0 /* SMARTRoom */;
 			targetProxy = 41010AD01E2FEA33008CD9F0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -519,10 +519,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = FVWAD94GR4;
 				INFOPLIST_FILE = Final306Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.PNGapps.Final306Project;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PNGapps.SMARTRoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -534,10 +535,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = FVWAD94GR4;
 				INFOPLIST_FILE = Final306Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.PNGapps.Final306Project;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PNGapps.SMARTRoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -553,7 +555,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.PNGapps.Final306ProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Final306Project.app/Final306Project";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SMARTRoom.app/SMARTRoom";
 			};
 			name = Debug;
 		};
@@ -567,7 +569,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.PNGapps.Final306ProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Final306Project.app/Final306Project";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SMARTRoom.app/SMARTRoom";
 			};
 			name = Release;
 		};
@@ -600,7 +602,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		41010AAB1E2FEA32008CD9F0 /* Build configuration list for PBXProject "Final306Project" */ = {
+		41010AAB1E2FEA32008CD9F0 /* Build configuration list for PBXProject "SMARTRoom" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				41010AD61E2FEA33008CD9F0 /* Debug */,
@@ -609,7 +611,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		41010AD81E2FEA33008CD9F0 /* Build configuration list for PBXNativeTarget "Final306Project" */ = {
+		41010AD81E2FEA33008CD9F0 /* Build configuration list for PBXNativeTarget "SMARTRoom" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				41010AD91E2FEA33008CD9F0 /* Debug */,
@@ -618,7 +620,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		41010ADB1E2FEA33008CD9F0 /* Build configuration list for PBXNativeTarget "Final306ProjectTests" */ = {
+		41010ADB1E2FEA33008CD9F0 /* Build configuration list for PBXNativeTarget "SMARTRoomTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				41010ADC1E2FEA33008CD9F0 /* Debug */,
@@ -627,7 +629,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		41010ADE1E2FEA33008CD9F0 /* Build configuration list for PBXNativeTarget "Final306ProjectUITests" */ = {
+		41010ADE1E2FEA33008CD9F0 /* Build configuration list for PBXNativeTarget "SMARTRoomUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				41010ADF1E2FEA33008CD9F0 /* Debug */,

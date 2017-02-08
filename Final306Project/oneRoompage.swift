@@ -98,12 +98,4 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         return pickerData[row]
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
 }
