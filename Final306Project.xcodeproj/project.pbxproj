@@ -518,7 +518,7 @@
 			baseConfigurationReference = A940E54A3F708FE1D917DF36 /* Pods-Final306Project.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				DEVELOPMENT_TEAM = FVWAD94GR4;
 				INFOPLIST_FILE = Final306Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -533,7 +533,7 @@
 			baseConfigurationReference = 534F8FC0A8F31A759307D22D /* Pods-Final306Project.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				DEVELOPMENT_TEAM = FVWAD94GR4;
 				INFOPLIST_FILE = Final306Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
