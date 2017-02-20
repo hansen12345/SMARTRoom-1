@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "41010AAF1E2FEA32008CD9F0"
-               BuildableName = "SMARTRoom.app"
-               BlueprintName = "SMARTRoom"
-               ReferencedContainer = "container:SMARTRoom.xcodeproj">
+               BuildableName = "Final306Project.app"
+               BlueprintName = "Final306Project"
+               ReferencedContainer = "container:Final306Project.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "41010AC31E2FEA33008CD9F0"
-               BuildableName = "SMARTRoomTests.xctest"
-               BlueprintName = "SMARTRoomTests"
-               ReferencedContainer = "container:SMARTRoom.xcodeproj">
+               BuildableName = "Final306ProjectTests.xctest"
+               BlueprintName = "Final306ProjectTests"
+               ReferencedContainer = "container:Final306Project.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "41010ACE1E2FEA33008CD9F0"
-               BuildableName = "SMARTRoomUITests.xctest"
-               BlueprintName = "SMARTRoomUITests"
-               ReferencedContainer = "container:SMARTRoom.xcodeproj">
+               BuildableName = "Final306ProjectUITests.xctest"
+               BlueprintName = "Final306ProjectUITests"
+               ReferencedContainer = "container:Final306Project.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "41010AAF1E2FEA32008CD9F0"
-            BuildableName = "SMARTRoom.app"
-            BlueprintName = "SMARTRoom"
-            ReferencedContainer = "container:SMARTRoom.xcodeproj">
+            BuildableName = "Final306Project.app"
+            BlueprintName = "Final306Project"
+            ReferencedContainer = "container:Final306Project.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "41010AAF1E2FEA32008CD9F0"
-            BuildableName = "SMARTRoom.app"
-            BlueprintName = "SMARTRoom"
-            ReferencedContainer = "container:SMARTRoom.xcodeproj">
+            BuildableName = "Final306Project.app"
+            BlueprintName = "Final306Project"
+            ReferencedContainer = "container:Final306Project.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "41010AAF1E2FEA32008CD9F0"
-            BuildableName = "SMARTRoom.app"
-            BlueprintName = "SMARTRoom"
-            ReferencedContainer = "container:SMARTRoom.xcodeproj">
+            BuildableName = "Final306Project.app"
+            BlueprintName = "Final306Project"
+            ReferencedContainer = "container:Final306Project.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -29,6 +29,7 @@ class RoomPage: UITableViewController {
         //DATA TEST
         let myVC = storyboard?.instantiateViewController(withIdentifier: "oneRoompage") as! oneRoompage
         myVC.intPassed = roomInt
+        NSLog("YO \(myVC.intPassed)")
         navigationController?.pushViewController(myVC, animated: true)
     }
     
