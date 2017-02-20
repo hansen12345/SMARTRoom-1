@@ -59,7 +59,7 @@
 		416010F91E3141EA0064F9C6 /* Roompage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Roompage.swift; sourceTree = "<group>"; };
 		41606B5C1E4185A300B823C9 /* loginUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loginUser.json; sourceTree = "<group>"; };
 		41606B5E1E4186D300B823C9 /* dataRoom.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dataRoom.json; sourceTree = "<group>"; };
-		41606B651E418E1C00B823C9 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		41606B651E418E1C00B823C9 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		41606B671E41AED800B823C9 /* oneRoompage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = oneRoompage.swift; sourceTree = "<group>"; };
 		41606B711E491E3000B823C9 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		534F8FC0A8F31A759307D22D /* Pods-Final306Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final306Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Final306Project/Pods-Final306Project.release.xcconfig"; sourceTree = "<group>"; };
