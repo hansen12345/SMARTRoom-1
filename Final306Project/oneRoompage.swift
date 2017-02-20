@@ -48,8 +48,9 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             roomsArray[intPassed][3] = "off"
         }
         
-        roomsArray[intPassed][4] = pickerData[21]
-        print(roomsArray)
+        for i in 0 ..< roomsArray.count {
+            roomsArray[intPassed][4] = pickerData[i]
+        }
     }
     
     @IBAction func submitDataButton(_ sender: Any) {
