@@ -21,6 +21,8 @@
 		41606B661E418E1C00B823C9 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 41606B651E418E1C00B823C9 /* Podfile */; };
 		41606B681E41AED800B823C9 /* oneRoompage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41606B671E41AED800B823C9 /* oneRoompage.swift */; };
 		41606B721E491E3000B823C9 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 41606B711E491E3000B823C9 /* logo.png */; };
+		41B478E21E5D8559005FE52A /* dataRoom.php in Resources */ = {isa = PBXBuildFile; fileRef = 41B478E01E5D8559005FE52A /* dataRoom.php */; };
+		41B478E31E5D8559005FE52A /* results.json in Resources */ = {isa = PBXBuildFile; fileRef = 41B478E11E5D8559005FE52A /* results.json */; };
 		EE62EBBD1B9AFC8103AEBC0A /* Pods_Final306Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D8D67D80F8ECC382D3F29E /* Pods_Final306Project.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +64,8 @@
 		41606B651E418E1C00B823C9 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		41606B671E41AED800B823C9 /* oneRoompage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = oneRoompage.swift; sourceTree = "<group>"; };
 		41606B711E491E3000B823C9 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		41B478E01E5D8559005FE52A /* dataRoom.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = dataRoom.php; sourceTree = "<group>"; };
+		41B478E11E5D8559005FE52A /* results.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = results.json; sourceTree = "<group>"; };
 		534F8FC0A8F31A759307D22D /* Pods-Final306Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final306Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Final306Project/Pods-Final306Project.release.xcconfig"; sourceTree = "<group>"; };
 		A6D8D67D80F8ECC382D3F29E /* Pods_Final306Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final306Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A940E54A3F708FE1D917DF36 /* Pods-Final306Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final306Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Final306Project/Pods-Final306Project.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 				41606B671E41AED800B823C9 /* oneRoompage.swift */,
 				41606B5C1E4185A300B823C9 /* loginUser.json */,
 				41606B5E1E4186D300B823C9 /* dataRoom.json */,
+				41B478E01E5D8559005FE52A /* dataRoom.php */,
+				41B478E11E5D8559005FE52A /* results.json */,
 				41010ABA1E2FEA33008CD9F0 /* Assets.xcassets */,
 				41010ABC1E2FEA33008CD9F0 /* LaunchScreen.storyboard */,
 				41010ABF1E2FEA33008CD9F0 /* Info.plist */,
@@ -285,9 +291,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				41606B721E491E3000B823C9 /* logo.png in Resources */,
+				41B478E21E5D8559005FE52A /* dataRoom.php in Resources */,
 				41606B661E418E1C00B823C9 /* Podfile in Resources */,
 				41606B5F1E4186D300B823C9 /* dataRoom.json in Resources */,
 				41010ABE1E2FEA33008CD9F0 /* LaunchScreen.storyboard in Resources */,
+				41B478E31E5D8559005FE52A /* results.json in Resources */,
 				41010ABB1E2FEA33008CD9F0 /* Assets.xcassets in Resources */,
 				41606B5D1E4185A300B823C9 /* loginUser.json in Resources */,
 				41010AB91E2FEA32008CD9F0 /* Main.storyboard in Resources */,

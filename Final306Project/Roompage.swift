@@ -34,17 +34,18 @@ class RoomPage: UITableViewController {
     }
     
     func parseJSON() {
-        let path : String = Bundle.main.path(forResource: "dataRoom", ofType: "json") as String!
+        let path : String = Bundle.main.path(forResource: "results", ofType: "json") as String!
         let roomData = NSData(contentsOfFile: path) as NSData!
         let readableJSON = JSON(data: roomData as! Data, options: JSONSerialization.ReadingOptions.mutableContainers, error: nil)
         
-        numberOfRows = readableJSON["rooms"].count
+        numberOfRows = readableJSON[].count
         
         for i in 1...numberOfRows {
             var Room = "room"
             Room += "\(i)"
-            let rooms = readableJSON["rooms"][Room]["roomNumber"].string as String!
+            let rooms = readableJSON[0][Room]["roomNumber"].string as String!
             
+            print("HEY \(rooms)")
             roomsArray.append(rooms!)
         }
         

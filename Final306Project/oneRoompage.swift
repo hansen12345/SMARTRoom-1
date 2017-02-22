@@ -89,7 +89,10 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             roomsArray[intPassed][3] = "off"
         }
         
-        roomsArray[intPassed][4] = pickerData[30]
+        /**
+        for ac in 0...pickerData.count {
+            roomsArray[intPassed][4] = pickerData[ac]
+        }**/
         
         print(roomsArray)
         
@@ -133,31 +136,32 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         
         //DATA TEST
         NSLog("!!!!!!!!!!!!!!!!!!!!\(intPassed)")
-        test.text = " int: \(intPassed)"
+        test.text = "\(intPassed)"
         
         parseJSON()
     }
     
     func parseJSON() {
-        let path : String = Bundle.main.path(forResource: "dataRoom", ofType: "json") as String!
+        let path : String = Bundle.main.path(forResource: "results", ofType: "json") as String!
         let roomData = NSData(contentsOfFile: path) as NSData!
         let readableJSON = JSON(data: roomData as! Data, options: JSONSerialization.ReadingOptions.mutableContainers, error: nil)
         
-        numberOfRows = readableJSON["rooms"].count
+        numberOfRows = readableJSON[0].count
         
         for row in 1...numberOfRows {
             var Room = "room"
             Room += "\(row)"
             
-            let rooms = readableJSON["rooms"][Room]["roomNumber"].string as String!
-            let lamps = readableJSON["rooms"][Room]["lamp"].string as String!
-            let tvs = readableJSON["rooms"][Room]["tv"].string as String!
-            let roomLights = readableJSON["rooms"][Room]["roomLight"].string as String!
-            let acUnits = readableJSON["rooms"][Room]["acUnit"].string as String!
+            let rooms = readableJSON[0][Room]["roomNumber"].string as String!
+            let lamps = readableJSON[0][Room]["lamp"].string as String!
+            let tvs = readableJSON[0][Room]["tv"].string as String!
+            let roomLights = readableJSON[0][Room]["roomLight"].string as String!
+            let acUnits = readableJSON[0][Room]["acUnit"].string as String!
             
             roomsArray.append([rooms!, lamps!, tvs!, roomLights!, acUnits!])
             
         }
+        
         NSLog("!!!!!room\(roomsArray)")
         
         roomName.text = roomsArray[intPassed][0]
@@ -182,8 +186,13 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             roomLightSwitch.setOn(false, animated: true)
             print("room light off")
         }
-        ACUnit.selectRow(30, inComponent: 0, animated: true)
-        
+        /*for ac in 0...pickerData.count {
+            if (roomsArray[intPassed][4] == pickerData[ac]) {
+                print ("WOOOO\(roomsArray[intPassed][4])\(pickerData[ac])")
+                ACUnit.selectRow(ac, inComponent: 0, animated: true)
+                
+            }
+        }*/
     }
 
     override func didReceiveMemoryWarning() {

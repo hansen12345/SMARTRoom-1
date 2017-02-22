@@ -30,7 +30,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" spellCheckingType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iIk-x1-1ys">
                                 <rect key="frame" x="78" y="313" width="218" height="30"/>
@@ -271,7 +271,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="RoomPage" id="4IS-8W-s8P" customClass="RoomPage" customModule="Final306Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" id="kMk-ep-eht" userLabel="TableView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="444"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.99607843139999996" green="0.91764705879999997" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -317,7 +317,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Xv3-f6-PRI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5b3-Xw-nnX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="444"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TV:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBR-V6-RgH">
@@ -358,7 +358,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ir0-lT-ps3">
-                                <rect key="frame" x="33" y="558" width="110" height="30"/>
+                                <rect key="frame" x="33" y="335" width="110" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="BYk-cx-IaU"/>
                                     <constraint firstAttribute="height" constant="30" id="wx3-S9-E3O"/>
@@ -392,7 +392,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Q0-tE-ugT">
-                                <rect key="frame" x="0.0" y="596" width="375" height="71"/>
+                                <rect key="frame" x="0.0" y="373" width="375" height="71"/>
                                 <color key="backgroundColor" red="0.058823529409999999" green="0.19215686269999999" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="71" id="0pa-Ye-O0x"/>
@@ -410,7 +410,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tc1-59-DBo">
-                                <rect key="frame" x="300" y="559" width="49" height="30"/>
+                                <rect key="frame" x="300" y="336" width="49" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="49" id="aqE-0l-5QK"/>
                                     <constraint firstAttribute="height" constant="30" id="upH-bc-AVp"/>
@@ -470,7 +470,7 @@
                         <viewControllerLayoutGuide type="bottom" id="PRN-gv-fZH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="C4A-ge-pDO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="444"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TV:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhZ-e4-fn7">
@@ -549,6 +549,6 @@
         <image name="logo.png" width="900" height="675"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lgq-Ek-wTA"/>
+        <segue reference="Vbd-Om-Bvd"/>
     </inferredMetricsTieBreakers>
 </document>
