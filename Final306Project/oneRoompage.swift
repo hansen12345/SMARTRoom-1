@@ -18,13 +18,12 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     
     @IBOutlet var roomName: UILabel!
     
-    //DATA TEST
-    @IBOutlet var test: UILabel!
-
     var numberOfRows = 0
     var roomsArray = [[String]]()
     var pickerData = [String]()
-    
+    //DATA TEST
+    var intPassed = Int()
+    var emID = Int()
     @IBAction func defaultRoom(_ sender: Any) {
         
         lampSwitch.setOn(false, animated: true)
@@ -47,17 +46,14 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         } else {
             roomsArray[intPassed][3] = "off"
         }
-        
-        for i in 0 ..< roomsArray.count {
-            roomsArray[intPassed][4] = pickerData[i]
-        }
+        roomsArray[intPassed][4] = pickerData[21]
     }
     
     @IBAction func submitDataButton(_ sender: Any) {
         let documentsDirectoryPathString = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         let documentsDirectoryPath = NSURL(string: documentsDirectoryPathString)!
         
-        let jsonFilePath = documentsDirectoryPath.appendingPathComponent("THEtest.json")
+        var jsonFilePath = documentsDirectoryPath.appendingPathComponent("THEtest.json")
         let fileManager = FileManager.default
         var isDirectory: ObjCBool = false
         
@@ -88,32 +84,28 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         } else {
             roomsArray[intPassed][3] = "off"
         }
-        
-        /**
-        for ac in 0...pickerData.count {
-            roomsArray[intPassed][4] = pickerData[ac]
-        }**/
+        roomsArray[intPassed][4] = pickerData[21]
         
         print(roomsArray)
         
         // creating an array of test data
-        var numbers = [String]()
+        var newRoomArray = [String]()
         for i in 0 ..< 100 {
-            numbers.append("Test\(i)")
+            newRoomArray.append("Test\(i)")
         }
         
         // creating JSON out of the above array
         var jsonData: NSData!
         do {
-            jsonData = try JSONSerialization.data(withJSONObject: numbers, options: JSONSerialization.WritingOptions()) as NSData!
-            //let jsonString = String(data: jsonData as Data, encoding: String.Encoding.utf8)
-            //NSLog(jsonString!)
+            jsonData = try JSONSerialization.data(withJSONObject: newRoomArray, options: JSONSerialization.WritingOptions()) as NSData!
+            let jsonString = String(data: jsonData as Data, encoding: String.Encoding.utf8)
+            NSLog(jsonString!)
         } catch let error as NSError {
             print("Array to JSON conversion failed: \(error.localizedDescription)")
         }
         
         // Write that JSON to the file created earlier
-        //let jsonFilePath1 = documentsDirectoryPath.appendingPathComponent("theTest.json")
+        jsonFilePath = documentsDirectoryPath.appendingPathComponent("theTest.json")
         do {
             let file = try FileHandle(forWritingTo: jsonFilePath!)
             file.write(jsonData as Data)
@@ -122,10 +114,6 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             print("Couldn't write to file: \(error.localizedDescription)")
         }
     }
-    
-    
-    //DATA TEST
-    var intPassed = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -136,7 +124,6 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         
         //DATA TEST
         NSLog("!!!!!!!!!!!!!!!!!!!!\(intPassed)")
-        test.text = "\(intPassed)"
         
         parseJSON()
     }
@@ -147,19 +134,23 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         let readableJSON = JSON(data: roomData as! Data, options: JSONSerialization.ReadingOptions.mutableContainers, error: nil)
         
         numberOfRows = readableJSON[0].count
-        
+        print("???rows\(numberOfRows)")
         for row in 1...numberOfRows {
             var Room = "room"
             Room += "\(row)"
-            
-            let rooms = readableJSON[0][Room]["roomNumber"].string as String!
-            let lamps = readableJSON[0][Room]["lamp"].string as String!
-            let tvs = readableJSON[0][Room]["tv"].string as String!
-            let roomLights = readableJSON[0][Room]["roomLight"].string as String!
-            let acUnits = readableJSON[0][Room]["acUnit"].string as String!
-            
-            roomsArray.append([rooms!, lamps!, tvs!, roomLights!, acUnits!])
-            
+            var counter = 0
+            let id = readableJSON[counter][Room]["customer_id"].string as String!
+            if (id == "\(emID)") {
+                let rooms = readableJSON[counter][Room]["room_name"].string as String!
+                let lamps = readableJSON[counter][Room]["lamp"].string as String!
+                let tvs = readableJSON[counter][Room]["tv"].string as String!
+                let roomLights = readableJSON[counter][Room]["roomLight"].string as String!
+                let acUnits = readableJSON[counter][Room]["acUnit"].string as String!
+                
+                roomsArray.append([rooms!, lamps!, tvs!, roomLights!, acUnits!])
+
+            }
+            counter += 1
         }
         
         NSLog("!!!!!room\(roomsArray)")
@@ -167,6 +158,7 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         roomName.text = roomsArray[intPassed][0]
         if (roomsArray[intPassed][1] == "on") {
             lampSwitch.setOn(true, animated: true)
+            
             print("lamp on")
         } else {
             lampSwitch.setOn(false, animated: true)
@@ -186,13 +178,14 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             roomLightSwitch.setOn(false, animated: true)
             print("room light off")
         }
-        /*for ac in 0...pickerData.count {
+        for ac in 0...pickerData.count {
             if (roomsArray[intPassed][4] == pickerData[ac]) {
                 print ("WOOOO\(roomsArray[intPassed][4])\(pickerData[ac])")
-                ACUnit.selectRow(ac, inComponent: 0, animated: true)
                 
+                ACUnit.selectRow(ac, inComponent: 0, animated: true)
+                return
             }
-        }*/
+        }
     }
 
     override func didReceiveMemoryWarning() {

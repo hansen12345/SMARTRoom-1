@@ -14,23 +14,13 @@ class RoomPage: UITableViewController {
     var numberOfRows = 0
     var roomsArray = [String]()
     
-    
-    //DATA TEST
     var roomInt = Int()
+    var roomInt2 = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //DATA TEST
-        roomInt = 1
-        
         parseJSON()
-        
-        //DATA TEST
-        let myVC = storyboard?.instantiateViewController(withIdentifier: "oneRoompage") as! oneRoompage
-        myVC.intPassed = roomInt
-        NSLog("YO \(myVC.intPassed)")
-        navigationController?.pushViewController(myVC, animated: true)
     }
     
     func parseJSON() {
@@ -38,30 +28,52 @@ class RoomPage: UITableViewController {
         let roomData = NSData(contentsOfFile: path) as NSData!
         let readableJSON = JSON(data: roomData as! Data, options: JSONSerialization.ReadingOptions.mutableContainers, error: nil)
         
-        numberOfRows = readableJSON[].count
+        numberOfRows = readableJSON[0].count
+        roomInt2 = 1
         
         for i in 1...numberOfRows {
+            
             var Room = "room"
             Room += "\(i)"
-            let rooms = readableJSON[0][Room]["roomNumber"].string as String!
+            var roomCount = 0
+            let emID = readableJSON[roomCount][Room]["customer_id"].string as String!
+            print("employee ID \(emID)")
+            print("ROOM Int 2 \(roomInt2)")
             
-            print("HEY \(rooms)")
-            roomsArray.append(rooms!)
+            if (emID == "\(roomInt2)") {
+                roomInt = roomInt2
+                let rooms = readableJSON[roomCount][Room]["room_name"].string as String!
+                
+                print("HEY \(rooms)")
+                roomsArray.append(rooms!)
+                
+            }
+            roomCount += 1
         }
-        
+        print(roomsArray)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return numberOfRows
+        return roomsArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) 
-        
+        //print(indexPath.row)
         cell.textLabel?.text = roomsArray[indexPath.row]
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let indexPath = tableView.indexPathForSelectedRow
+        let index = indexPath?.row
+        let myVC = segue.destination as! oneRoompage
+        myVC.intPassed = index!
+        myVC.emID = roomInt2
+        NSLog("YO \(myVC.intPassed)")
+        
     }
 }

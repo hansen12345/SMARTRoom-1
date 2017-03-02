@@ -18,15 +18,15 @@ class ViewController: UIViewController {
     var numberOfRows = 0
     var employeeArray = [String]()
     var passwordArray = [String]()
+    var emID = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        //parseJSON()
-
+        //emID = 1
+        
     }
     
-    @IBAction func loginButton(_ sender: Any) {
+    @IBAction func loginButton(_ sender: AnyObject) {
         let username = self.employeeID.text
         let password = self.employeePassword.text
         
@@ -34,19 +34,18 @@ class ViewController: UIViewController {
         let loginData = NSData(contentsOfFile: path) as NSData!
         let readableJSON = JSON(data: loginData as! Data, options: JSONSerialization.ReadingOptions.mutableContainers, error: nil)
         
-        numberOfRows = readableJSON["users"].count
-        
+        numberOfRows = readableJSON[0].count
+        print("???room\(numberOfRows)")
         for i in 1...numberOfRows {
-            var user = "user"
+            
+            var user = "login"
             user += "\(i)"
             
-            let loginID = readableJSON["users"][user]["employeeID"].string as String!
-            let passwordID = readableJSON["users"][user]["password"].string as String!
+            let loginID = readableJSON[0][user]["username"].string as String!
+            let passwordID = readableJSON[0][user]["password"].string as String!
             
             employeeArray.append(loginID!)
             passwordArray.append(passwordID!)
-            
-            
         }
         NSLog("\(employeeArray)")
         NSLog("\(passwordArray)")
@@ -65,6 +64,8 @@ class ViewController: UIViewController {
             alertController.addAction(okAction)
             self.present(alertController, animated: true) {
             }
+            employeeArray.removeAll()
+            passwordArray.removeAll()
             return
         }
         
@@ -73,6 +74,9 @@ class ViewController: UIViewController {
            
             if (username == employeeArray[b] && password == passwordArray[b]) {
                 NSLog("LOGGED IN")
+                b += 1
+                emID = b
+                print("EMP ID:\(emID)")
                 return
             } else {
                  b += 1
@@ -89,11 +93,20 @@ class ViewController: UIViewController {
         alertController.addAction(okAction)
         self.present(alertController, animated: true) {
         }
+        employeeArray.removeAll()
+        passwordArray.removeAll()
 
-        
-        
+    }
+    
+    /*
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let myVC = segue.destination as! RoomPage
+     
+        myVC.roomInt2 = emID
+        NSLog("YO \(myVC.roomInt2)")
         
     }
+    */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
