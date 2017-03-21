@@ -9,7 +9,7 @@
    {
      die('Could not connect: ' . mysql_error());
    }
-   $sql = 'SELECT * FROM Room';
+   $sql = 'SELECT * FROM Component';
    mysql_select_db('SMARTRoom');
    $retval = mysql_query($sql, $conn); 
    
@@ -37,7 +37,7 @@
 
    echo json_encode($types);
    
-   $fp = fopen('results.json', 'w');
+   $fp = fopen('results2.json', 'w');
    fwrite($fp, json_encode($types));
 
 

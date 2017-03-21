@@ -53,7 +53,7 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         let documentsDirectoryPathString = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         let documentsDirectoryPath = NSURL(string: documentsDirectoryPathString)!
         
-        var jsonFilePath = documentsDirectoryPath.appendingPathComponent("THEtest.json")
+        var jsonFilePath = documentsDirectoryPath.appendingPathComponent("results.json")
         let fileManager = FileManager.default
         var isDirectory: ObjCBool = false
         
@@ -84,20 +84,32 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         } else {
             roomsArray[intPassed][3] = "off"
         }
-        roomsArray[intPassed][4] = pickerData[21]
+        
+        
+        /*for ac in 0...pickerData.count {
+            if (roomsArray[intPassed][4] == pickerData[ac]) {
+                print ("WOOOO\(roomsArray[intPassed][4])\(pickerData[ac])")
+                
+                roomsArray[intPassed][4] = pickerData[ac]
+                
+                return
+            }
+        }*/
         
         print(roomsArray)
         
-        // creating an array of test data
+        
+        
+        /* creating an array of test data
         var newRoomArray = [String]()
         for i in 0 ..< 100 {
             newRoomArray.append("Test\(i)")
-        }
+        }*/
         
         // creating JSON out of the above array
         var jsonData: NSData!
         do {
-            jsonData = try JSONSerialization.data(withJSONObject: newRoomArray, options: JSONSerialization.WritingOptions()) as NSData!
+            jsonData = try JSONSerialization.data(withJSONObject: roomsArray, options: JSONSerialization.WritingOptions()) as NSData!
             let jsonString = String(data: jsonData as Data, encoding: String.Encoding.utf8)
             NSLog(jsonString!)
         } catch let error as NSError {
@@ -105,7 +117,7 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         }
         
         // Write that JSON to the file created earlier
-        jsonFilePath = documentsDirectoryPath.appendingPathComponent("theTest.json")
+        jsonFilePath = documentsDirectoryPath.appendingPathComponent("results.json")
         do {
             let file = try FileHandle(forWritingTo: jsonFilePath!)
             file.write(jsonData as Data)
@@ -156,6 +168,7 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         NSLog("!!!!!room\(roomsArray)")
         
         roomName.text = roomsArray[intPassed][0]
+        
         if (roomsArray[intPassed][1] == "on") {
             lampSwitch.setOn(true, animated: true)
             
