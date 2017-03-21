@@ -26,6 +26,7 @@
 		41B478E21E5D8559005FE52A /* dataRoom.php in Resources */ = {isa = PBXBuildFile; fileRef = 41B478E01E5D8559005FE52A /* dataRoom.php */; };
 		41B478E31E5D8559005FE52A /* results.json in Resources */ = {isa = PBXBuildFile; fileRef = 41B478E11E5D8559005FE52A /* results.json */; };
 		EE62EBBD1B9AFC8103AEBC0A /* Pods_Final306Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D8D67D80F8ECC382D3F29E /* Pods_Final306Project.framework */; };
+		FADBEDDB1E81E2F700AD381E /* postToDatabase.php in Resources */ = {isa = PBXBuildFile; fileRef = FADBEDDA1E81E2F700AD381E /* postToDatabase.php */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		534F8FC0A8F31A759307D22D /* Pods-Final306Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final306Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Final306Project/Pods-Final306Project.release.xcconfig"; sourceTree = "<group>"; };
 		A6D8D67D80F8ECC382D3F29E /* Pods_Final306Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final306Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A940E54A3F708FE1D917DF36 /* Pods-Final306Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final306Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Final306Project/Pods-Final306Project.debug.xcconfig"; sourceTree = "<group>"; };
+		FADBEDDA1E81E2F700AD381E /* postToDatabase.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = postToDatabase.php; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				41010ABA1E2FEA33008CD9F0 /* Assets.xcassets */,
 				41010ABC1E2FEA33008CD9F0 /* LaunchScreen.storyboard */,
 				41010ABF1E2FEA33008CD9F0 /* Info.plist */,
+				FADBEDDA1E81E2F700AD381E /* postToDatabase.php */,
 			);
 			path = Final306Project;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			files = (
 				41606B721E491E3000B823C9 /* logo.png in Resources */,
 				418BCC6D1E660F8800D6C225 /* dataRoomToDatabase.php in Resources */,
+				FADBEDDB1E81E2F700AD381E /* postToDatabase.php in Resources */,
 				418BCC6F1E6694B700D6C225 /* SMARTRoom.php in Resources */,
 				41B478E21E5D8559005FE52A /* dataRoom.php in Resources */,
 				41606B661E418E1C00B823C9 /* Podfile in Resources */,
