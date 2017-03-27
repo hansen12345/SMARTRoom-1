@@ -15,12 +15,11 @@
     }
     else
     mysql_select_db('SMARTRoom');
-    $sql = "UPDATE Component SET component_status = 'ON' WHERE component_id = 6";
+    $sql = "UPDATE Component SET component_status = 'OFF' WHERE component_id = 6";
     
     
-
     if ($connection == TRUE) {
-      //$postonOff = $_REQUEST['data'];
+        //$postonOff = $_REQUEST['data'];
         mysql_query($sql);
         
         echo "added";

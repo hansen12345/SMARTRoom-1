@@ -5,48 +5,82 @@
 //  Created by Paolo Garcia  on 1/18/17.
 //  Copyright © 2017 PNGapps. All rights reserved.
 //
+//
+//  ViewController.swift
+//  Final306Project
+//
+// Created Alex Hansen
+//
 
 import UIKit
 import SwiftyJSON
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet var employeeID: UITextField!
     @IBOutlet var employeePassword: UITextField!
-    
     
     var numberOfRows = 0
     var employeeArray = [String]()
     var passwordArray = [String]()
-    var emID = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //emID = 1
+        // Do any additional setup after loading the view, typically from a nib.
+        //parseJSON()
         
     }
-    
-    @IBAction func loginButton(_ sender: AnyObject) {
-        let username = self.employeeID.text
-        let password = self.employeePassword.text
-        
+    func parseJSON() {
         let path : String = Bundle.main.path(forResource: "loginUser", ofType: "json") as String!
         let loginData = NSData(contentsOfFile: path) as NSData!
         let readableJSON = JSON(data: loginData as! Data, options: JSONSerialization.ReadingOptions.mutableContainers, error: nil)
         
         numberOfRows = readableJSON[0].count
-        print("???room\(numberOfRows)")
+        print("Counter\(numberOfRows)")
+        
         for i in 1...numberOfRows {
+            var login = "login"
+            login += "\(i)"
             
-            var user = "login"
-            user += "\(i)"
-            
-            let loginID = readableJSON[0][user]["username"].string as String!
-            let passwordID = readableJSON[0][user]["password"].string as String!
+            let loginID = readableJSON[0][login]["username"].string as String!
+            let passwordID = readableJSON[0][login]["password"].string as String!
             
             employeeArray.append(loginID!)
             passwordArray.append(passwordID!)
         }
+    }
+    
+    func downloadItems() {
+        let url =  "http://192.168.99.34/SMARTRoom.php"
+        let myUrl = NSURL(string: url)
+        var request = URLRequest(url:myUrl! as URL)
+        request.httpMethod = "GET"
+        let session = URLSession.shared
+        
+        let dataTask = session.dataTask(with: request as URLRequest) {data,response,error in
+            let httpResponse = response as? HTTPURLResponse
+            
+            if (error != nil) {
+                print(error )
+            } else {
+                print(httpResponse)
+            }
+            
+            DispatchQueue.main.async {
+                //Update your UI here
+            }
+            
+        }
+        dataTask.resume()
+    }
+    @IBAction func loginButton(_ sender: Any) {
+        let username = self.employeeID.text
+        let password = self.employeePassword.text
+        downloadItems()
+        parseJSON()
+        
+        
+        
         NSLog("\(employeeArray)")
         NSLog("\(passwordArray)")
         NSLog("\(numberOfRows)")
@@ -64,22 +98,17 @@ class ViewController: UIViewController {
             alertController.addAction(okAction)
             self.present(alertController, animated: true) {
             }
-            employeeArray.removeAll()
-            passwordArray.removeAll()
             return
         }
         
         var b = 0
         while (b < numberOfRows) {
-           
+            
             if (username == employeeArray[b] && password == passwordArray[b]) {
                 NSLog("LOGGED IN")
-                b += 1
-                emID = b
-                print("EMP ID:\(emID)")
                 return
             } else {
-                 b += 1
+                b += 1
             }
         }
         let alertController = UIAlertController(title: "INVALID", message: "Username and password do not match", preferredStyle: .alert)
@@ -93,26 +122,22 @@ class ViewController: UIViewController {
         alertController.addAction(okAction)
         self.present(alertController, animated: true) {
         }
-        employeeArray.removeAll()
-        passwordArray.removeAll()
-
-    }
-    
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let myVC = segue.destination as! RoomPage
-     
-        myVC.roomInt2 = emID
-        NSLog("YO \(myVC.roomInt2)")
+        
         
     }
-    */
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
+
+
+
+
+
 
 
