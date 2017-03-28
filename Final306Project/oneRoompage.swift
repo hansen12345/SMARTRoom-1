@@ -14,8 +14,7 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBOutlet var lampSwitch: UISwitch!
     @IBOutlet var tvSwitch: UISwitch!
     @IBOutlet var roomLightSwitch: UISwitch!
-    @IBOutlet var ACUnit: UIPickerView!
-    
+    @IBOutlet var acSwitch: UISwitch!
     @IBOutlet var roomName: UILabel!
     
     var numberOfRows = 0
@@ -29,7 +28,7 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         lampSwitch.setOn(false, animated: true)
         tvSwitch.setOn(false, animated: true)
         roomLightSwitch.setOn(false, animated: true)
-        ACUnit.selectRow(21, inComponent: 0, animated: true)
+       
         
         if (lampSwitch.isOn) {
             roomsArray[intPassed][1] = "on"
@@ -46,7 +45,12 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         } else {
             roomsArray[intPassed][3] = "off"
         }
-        roomsArray[intPassed][4] = pickerData[21]
+        if (acSwitch.isOn) {
+            roomsArray[intPassed][4] = "on"
+        } else {
+            roomsArray[intPassed][4] = "off"
+        }
+        
     }
     
     @IBAction func submitDataButton(_ sender: Any) {
@@ -84,17 +88,12 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         } else {
             roomsArray[intPassed][3] = "off"
         }
+        if (acSwitch.isOn) {
+            roomsArray[intPassed][4] = "on"
+        } else {
+            roomsArray[intPassed][4] = "off"
+        }
         
-        
-        /*for ac in 0...pickerData.count {
-            if (roomsArray[intPassed][4] == pickerData[ac]) {
-                print ("WOOOO\(roomsArray[intPassed][4])\(pickerData[ac])")
-                
-                roomsArray[intPassed][4] = pickerData[ac]
-                
-                return
-            }
-        }*/
         
         print(roomsArray)
         
@@ -130,9 +129,6 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.ACUnit.delegate = self
-        self.ACUnit.delegate = self
-        pickerData = ["45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80"]
         
         //DATA TEST
         NSLog("!!!!!!!!!!!!!!!!!!!!\(intPassed)")
@@ -191,14 +187,15 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             roomLightSwitch.setOn(false, animated: true)
             print("room light off")
         }
-        for ac in 0...pickerData.count {
-            if (roomsArray[intPassed][4] == pickerData[ac]) {
-                print ("WOOOO\(roomsArray[intPassed][4])\(pickerData[ac])")
-                
-                ACUnit.selectRow(ac, inComponent: 0, animated: true)
-                return
-            }
+        if (roomsArray[intPassed][4] == "on") {
+            acSwitch.setOn(true, animated: true)
+            print("room light on")
+        } else {
+            acSwitch.setOn(false, animated: true)
+            print("room light off")
         }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
