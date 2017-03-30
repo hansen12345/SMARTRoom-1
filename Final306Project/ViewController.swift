@@ -51,14 +51,14 @@ class ViewController: UIViewController {
     }
     
     func downloadItems() {
-        let url =  "http://192.168.99.34/SMARTRoom.php"
+        let url =  "http://192.168.99.82/login.php"
         let myUrl = NSURL(string: url)
         var request = URLRequest(url:myUrl! as URL)
         request.httpMethod = "GET"
         let session = URLSession.shared
         
         let dataTask = session.dataTask(with: request as URLRequest) {data,response,error in
-            let httpResponse = response as? HTTPURLResponse
+        let httpResponse = response as? HTTPURLResponse
             
             if (error != nil) {
                 print(error )

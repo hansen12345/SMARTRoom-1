@@ -179,7 +179,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SUBMIT"/>
                                 <connections>
+<<<<<<< HEAD
+                                    <action selector="onOffSwitch:" destination="z5J-Mg-ZsE" eventType="valueChanged" id="RMl-UK-EWh"/>
+=======
                                     <action selector="submit:" destination="z5J-Mg-ZsE" eventType="touchUpInside" id="Y3C-Lr-2Pf"/>
+>>>>>>> origin/master
                                 </connections>
                             </button>
                         </subviews>
