@@ -9,44 +9,68 @@
 import UIKit
 import SwiftyJSON
 
-class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class oneRoompage: UIViewController {
     
-    @IBOutlet var lampSwitch: UISwitch!
-    @IBOutlet var tvSwitch: UISwitch!
-    @IBOutlet var roomLightSwitch: UISwitch!
-    @IBOutlet var ACUnit: UIPickerView!
     
     @IBOutlet var roomName: UILabel!
     
+    //switches for components
+    @IBOutlet var switch1: UISwitch!
+    @IBOutlet var switch2: UISwitch!
+    @IBOutlet var switch3: UISwitch!
+    @IBOutlet var switch4: UISwitch!
+    @IBOutlet var switch5: UISwitch!
+    
+    //Label for components
+    @IBOutlet var comp1: UILabel!
+    @IBOutlet var comp2: UILabel!
+    @IBOutlet var comp3: UILabel!
+    @IBOutlet var comp4: UILabel!
+    @IBOutlet var comp5: UILabel!
+    
+    
+    
+    
     var numberOfRows = 0
     var roomsArray = [[String]]()
-    var pickerData = [String]()
     //DATA TEST
     var intPassed = Int()
     var emID = Int()
     @IBAction func defaultRoom(_ sender: Any) {
         
-        lampSwitch.setOn(false, animated: true)
-        tvSwitch.setOn(false, animated: true)
-        roomLightSwitch.setOn(false, animated: true)
-        ACUnit.selectRow(21, inComponent: 0, animated: true)
+        switch1.setOn(false, animated: true)
+        switch2.setOn(false, animated: true)
+        switch3.setOn(false, animated: true)
+        switch4.setOn(false, animated: true)
+        switch5.setOn(false, animated: true)
+       
         
-        if (lampSwitch.isOn) {
+        if (switch1.isOn) {
             roomsArray[intPassed][1] = "on"
         } else {
             roomsArray[intPassed][1] = "off"
         }
-        if (tvSwitch.isOn) {
+        if (switch2.isOn) {
             roomsArray[intPassed][2] = "on"
         } else {
             roomsArray[intPassed][2] = "off"
         }
-        if (roomLightSwitch.isOn) {
+        if (switch3.isOn) {
             roomsArray[intPassed][3] = "on"
         } else {
             roomsArray[intPassed][3] = "off"
         }
-        roomsArray[intPassed][4] = pickerData[21]
+        if (switch4.isOn) {
+            roomsArray[intPassed][4] = "on"
+        } else {
+            roomsArray[intPassed][4] = "off"
+        }
+        if (switch5.isOn) {
+            roomsArray[intPassed][4] = "on"
+        } else {
+            roomsArray[intPassed][4] = "off"
+        }
+        
     }
     
     @IBAction func submitDataButton(_ sender: Any) {
@@ -69,36 +93,33 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             print("File already exists")
         }
         
-        if (lampSwitch.isOn) {
+        if (switch1.isOn) {
             roomsArray[intPassed][1] = "on"
         } else {
             roomsArray[intPassed][1] = "off"
         }
-        if (tvSwitch.isOn) {
+        if (switch2.isOn) {
             roomsArray[intPassed][2] = "on"
         } else {
             roomsArray[intPassed][2] = "off"
         }
-        if (roomLightSwitch.isOn) {
+        if (switch3.isOn) {
             roomsArray[intPassed][3] = "on"
         } else {
             roomsArray[intPassed][3] = "off"
         }
-        
-        
-        /*for ac in 0...pickerData.count {
-            if (roomsArray[intPassed][4] == pickerData[ac]) {
-                print ("WOOOO\(roomsArray[intPassed][4])\(pickerData[ac])")
-                
-                roomsArray[intPassed][4] = pickerData[ac]
-                
-                return
-            }
-        }*/
+        if (switch4.isOn) {
+            roomsArray[intPassed][4] = "on"
+        } else {
+            roomsArray[intPassed][4] = "off"
+        }
+        if (switch5.isOn) {
+            roomsArray[intPassed][4] = "on"
+        } else {
+            roomsArray[intPassed][4] = "off"
+        }
         
         print(roomsArray)
-        
-        
         
         /* creating an array of test data
         var newRoomArray = [String]()
@@ -130,10 +151,6 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.ACUnit.delegate = self
-        self.ACUnit.delegate = self
-        pickerData = ["45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80"]
-        
         //DATA TEST
         NSLog("!!!!!!!!!!!!!!!!!!!!\(intPassed)")
         
@@ -153,13 +170,13 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             var counter = 0
             let id = readableJSON[counter][Room]["customer_id"].string as String!
             if (id == "\(emID)") {
-                let rooms = readableJSON[counter][Room]["room_name"].string as String!
-                let lamps = readableJSON[counter][Room]["lamp"].string as String!
-                let tvs = readableJSON[counter][Room]["tv"].string as String!
-                let roomLights = readableJSON[counter][Room]["roomLight"].string as String!
-                let acUnits = readableJSON[counter][Room]["acUnit"].string as String!
+                let arrayName = readableJSON[counter][Room]["room_name"].string as String!
+                let array1 = readableJSON[counter][Room]["lamp"].string as String!
+                let array2 = readableJSON[counter][Room]["tv"].string as String!
+                let array3 = readableJSON[counter][Room]["roomLight"].string as String!
+                let array4 = readableJSON[counter][Room]["acUnit"].string as String!
                 
-                roomsArray.append([rooms!, lamps!, tvs!, roomLights!, acUnits!])
+                roomsArray.append([arrayName!, array1!, array2!, array3!, array4!])
 
             }
             counter += 1
@@ -170,59 +187,33 @@ class oneRoompage: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         roomName.text = roomsArray[intPassed][0]
         
         if (roomsArray[intPassed][1] == "on") {
-            lampSwitch.setOn(true, animated: true)
-            
-            print("lamp on")
+            switch1.setOn(true, animated: true)
         } else {
-            lampSwitch.setOn(false, animated: true)
-            print("lamp off")
+            switch1.setOn(false, animated: true)
         }
         if (roomsArray[intPassed][2] == "on") {
-            tvSwitch.setOn(true, animated: true)
-            print("tv on")
+            switch2.setOn(true, animated: true)
         } else {
-            tvSwitch.setOn(false, animated: true)
-            print("tv off")
+            switch2.setOn(false, animated: true)
         }
         if (roomsArray[intPassed][3] == "on") {
-            roomLightSwitch.setOn(true, animated: true)
-            print("room light on")
+            switch3.setOn(true, animated: true)
         } else {
-            roomLightSwitch.setOn(false, animated: true)
-            print("room light off")
+            switch3.setOn(false, animated: true)
         }
-        for ac in 0...pickerData.count {
-            if (roomsArray[intPassed][4] == pickerData[ac]) {
-                print ("WOOOO\(roomsArray[intPassed][4])\(pickerData[ac])")
-                
-                ACUnit.selectRow(ac, inComponent: 0, animated: true)
-                return
-            }
+        if (roomsArray[intPassed][4] == "on") {
+            switch4.setOn(true, animated: true)
+        } else {
+            switch4.setOn(false, animated: true)
         }
+        /*if (roomsArray[intPassed][5] == "on") {
+            switch5.setOn(true, animated: true)
+        } else {
+            switch5.setOn(false, animated: true)
+        }*/
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
