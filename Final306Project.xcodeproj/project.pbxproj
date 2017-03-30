@@ -28,7 +28,6 @@
 		EE62EBBD1B9AFC8103AEBC0A /* Pods_Final306Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D8D67D80F8ECC382D3F29E /* Pods_Final306Project.framework */; };
 		FADBEDDB1E81E2F700AD381E /* postToDatabase.php in Resources */ = {isa = PBXBuildFile; fileRef = FADBEDDA1E81E2F700AD381E /* postToDatabase.php */; };
 		FADBEDDD1E81E95E00AD381E /* testClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBEDDC1E81E95E00AD381E /* testClass.swift */; };
-		FADBEDE11E81EC6700AD381E /* offToDatabase.php in Resources */ = {isa = PBXBuildFile; fileRef = FADBEDE01E81EC6700AD381E /* offToDatabase.php */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +77,6 @@
 		A940E54A3F708FE1D917DF36 /* Pods-Final306Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final306Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Final306Project/Pods-Final306Project.debug.xcconfig"; sourceTree = "<group>"; };
 		FADBEDDA1E81E2F700AD381E /* postToDatabase.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = postToDatabase.php; sourceTree = "<group>"; };
 		FADBEDDC1E81E95E00AD381E /* testClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testClass.swift; sourceTree = "<group>"; };
-		FADBEDE01E81EC6700AD381E /* offToDatabase.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = offToDatabase.php; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +149,6 @@
 				41010ABF1E2FEA33008CD9F0 /* Info.plist */,
 				FADBEDDA1E81E2F700AD381E /* postToDatabase.php */,
 				FADBEDDC1E81E95E00AD381E /* testClass.swift */,
-				FADBEDE01E81EC6700AD381E /* offToDatabase.php */,
 			);
 			path = Final306Project;
 			sourceTree = "<group>";
@@ -314,7 +311,6 @@
 				41606B5F1E4186D300B823C9 /* dataRoom.json in Resources */,
 				41010ABE1E2FEA33008CD9F0 /* LaunchScreen.storyboard in Resources */,
 				41B478E31E5D8559005FE52A /* results.json in Resources */,
-				FADBEDE11E81EC6700AD381E /* offToDatabase.php in Resources */,
 				41010ABB1E2FEA33008CD9F0 /* Assets.xcassets in Resources */,
 				41606B5D1E4185A300B823C9 /* loginUser.json in Resources */,
 				41010AB91E2FEA32008CD9F0 /* Main.storyboard in Resources */,

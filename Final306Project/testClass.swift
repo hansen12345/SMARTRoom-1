@@ -9,6 +9,7 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 class TestClass: UIViewController {
     override func viewDidLoad() {
@@ -20,58 +21,81 @@ class TestClass: UIViewController {
     
 
 
-    func postItemsON() {
-        let url =  "http://192.168.99.34/postToDatabase.php"
-        let myUrl = NSURL(string: url)
+    func postItemsOff() {
+        let myUrl = NSURL(string: "http://52.24.214.101/postToDatabase.php")
         var request = URLRequest(url:myUrl! as URL)
+        
         request.httpMethod = "POST"
-        let bodyData = "data=ON"
-        request.httpBody = bodyData.data(using: String.Encoding.utf8);
-        let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
-            
+        request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
+        
+        let postString = "status=OFF&room=6"
+        request.httpBody = postString.data(using: String.Encoding.utf8)
+        let task = URLSession.shared.dataTask(with: request as URLRequest) {
+            data, response, error in
             if error != nil
             {
                 print("error=\(error)")
                 return
             }
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200{
+                print("status code is \(httpStatus.statusCode)")
+                print("repsonse = \(response)")
+            }
+            if let dataString = NSString(data:data!, encoding:String.Encoding.utf8.rawValue){
+                print(dataString)
+            }
         }
-        
         task.resume()
+        print (task)
+        
     }
 
-    func postItemsOff() {
-        let url =  "http://192.168.99.34/offToDatabase.php"
-        let myUrl = NSURL(string: url)
+    func postToDatabase() {
+        let myUrl = NSURL(string: "http://52.24.214.101/postToDatabase.php")
         var request = URLRequest(url:myUrl! as URL)
+        
         request.httpMethod = "POST"
-        let bodyData = "data=OFF"
-        request.httpBody = bodyData.data(using:String.Encoding.utf8);
-        let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
-            
+        request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
+        
+        let postString = "status=ON&room=6"
+        request.httpBody = postString.data(using: String.Encoding.utf8)
+        let task = URLSession.shared.dataTask(with: request as URLRequest) {
+            data, response, error in
             if error != nil
             {
                 print("error=\(error)")
                 return
             }
-        }
-        task.resume()
-        }
-    
-
- 
-
-        func onOffSwitch(_ sender: Any) {
-            if(onOff.isOn){
-                onOffLabel.text = " The Power is On!"
-                 postItemsON()
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200{
+                print("status code is \(httpStatus.statusCode)")
+                print("repsonse = \(response)")
             }
-            else{
-                onOffLabel.text = " The power is off :("
-                postItemsOff()
+            if let dataString = NSString(data:data!, encoding:String.Encoding.utf8.rawValue){
+                print(dataString)
             }
-    
-
         }
+      task.resume()
+        print (task)
+    
+    }
+
+
+
+    @IBAction func onOffSwitch(_ sender: Any) {
+        if (onOff.isOn){
+            onOffLabel.text = "The light is on"
+            postToDatabase()
+        }
+
+        else{
+            onOffLabel.text = "the Light is off"
+            postItemsOff()
+        }
+        }
+
+
+
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -79,11 +103,10 @@ class TestClass: UIViewController {
     
         
         
-        
-        
-        
-        
+        }
+
         
         }
-    }
+
+        
 
