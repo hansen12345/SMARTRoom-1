@@ -29,6 +29,7 @@
     }
     
    	array_push($types, $row_array);
+    print_r(array_values($row_array));
     echo json_encode("File wrote from database successful")."\n\n";
     $fp = fopen('newResults.json', 'w');
     fwrite($fp, json_encode($types));

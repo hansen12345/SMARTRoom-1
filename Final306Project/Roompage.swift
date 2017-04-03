@@ -24,7 +24,7 @@ class RoomPage: UITableViewController {
     }
     
     func parseJSON() {
-        let path : String = Bundle.main.path(forResource: "results", ofType: "json") as String!
+        let path : String = Bundle.main.path(forResource: "newResults", ofType: "json") as String!
         let roomData = NSData(contentsOfFile: path) as NSData!
         let readableJSON = JSON(data: roomData as! Data, options: JSONSerialization.ReadingOptions.mutableContainers, error: nil)
         
