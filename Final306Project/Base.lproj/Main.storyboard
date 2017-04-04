@@ -229,7 +229,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pV-K0-4g7">
-                                <rect key="frame" x="0.0" y="159" width="375" height="440"/>
+                                <rect key="frame" x="0.0" y="160" width="375" height="439"/>
                                 <connections>
                                     <segue destination="4IS-8W-s8P" kind="embed" id="efg-Sj-gev"/>
                                 </connections>
@@ -256,7 +256,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rooms" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fd-QC-8s8">
-                                <rect key="frame" x="120" y="118" width="134" height="32.5"/>
+                                <rect key="frame" x="120" y="118" width="134" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -299,7 +299,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="RoomPage" id="4IS-8W-s8P" customClass="RoomPage" customModule="Final306Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" id="kMk-ep-eht" userLabel="TableView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="440"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="439"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.99607843139999996" green="0.91764705879999997" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -501,6 +501,11 @@
                         <outlet property="comp3" destination="VfH-kl-J1i" id="WyH-g0-AzB"/>
                         <outlet property="comp4" destination="bAf-zG-aH6" id="MTV-MS-Dej"/>
                         <outlet property="comp5" destination="Yvf-Qj-FRO" id="JBU-30-XJg"/>
+                        <outlet property="output1" destination="yCG-z5-XmE" id="V5v-HY-l0y"/>
+                        <outlet property="output2" destination="w8Q-rB-vk7" id="rNX-Xh-eWK"/>
+                        <outlet property="output3" destination="fCn-cb-S0q" id="Ktf-gt-1c4"/>
+                        <outlet property="output4" destination="8Vw-Sb-4gL" id="XoI-T8-Sh5"/>
+                        <outlet property="output5" destination="fhe-qs-0dC" id="wtq-eV-VI5"/>
                         <outlet property="roomName" destination="noc-jm-yaI" id="Ip3-GY-o3b"/>
                         <outlet property="switch1" destination="95P-Nr-4N3" id="Abs-hp-S9g"/>
                         <outlet property="switch2" destination="xre-4z-fdZ" id="RdD-OH-rPt"/>

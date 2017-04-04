@@ -13,7 +13,7 @@ class RoomPage: UITableViewController {
     
     var numberOfRows = 0
     var roomsArray = [String]()
-    
+    var compareArray = [String]()
     var roomInt = Int()
     var roomInt2 = Int()
     
@@ -33,24 +33,35 @@ class RoomPage: UITableViewController {
         
         for i in 1...numberOfRows {
             
-            var Room = "room"
+            var Room = "comp"
+            var nextRoom = "comp"
             Room += "\(i)"
+            nextRoom += "\(i+1)"
+            
             var roomCount = 0
+            
             let emID = readableJSON[roomCount][Room]["customer_id"].string as String!
-            print("employee ID \(emID)")
-            print("ROOM Int 2 \(roomInt2)")
+            let hasComponents = readableJSON[roomCount][Room]["room_name"].string as String!
+            
+            //print("employee ID \(emID)")
+            //print("ROOM Int 2 \(roomInt2)")
             
             if (emID == "\(roomInt2)") {
                 roomInt = roomInt2
                 let rooms = readableJSON[roomCount][Room]["room_name"].string as String!
                 
                 print("HEY \(rooms)")
+                compareArray.append(rooms!)
                 roomsArray.append(rooms!)
-                
+                /*
+                if (hasComponents == compareArray[roomCount]) {
+                    roomsArray.append(rooms!)
+                }
+                */
             }
             roomCount += 1
         }
-        print(roomsArray)
+        print("ROOMS FOR THE COMP\(roomsArray)")
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

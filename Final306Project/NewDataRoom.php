@@ -23,15 +23,16 @@
     $count = 0;
     while($row = mysql_fetch_assoc($retval)) {
         $count++;
-        $room = "$count";
-        $inside = array($row_array[$room]['customer_id'] = $row['customer_id'], $row_array[$room]['room_name'] = $row['room_name'], $row_array[$room]['component_name'] = $row['component_name'], $row_array[$room]['component_status'] = $row['component_status']);
+        $room = "comp$count";
+        $inside = array($row_array[$room]['customer_id'] = $row['customer_id'], $row_array[$room]['room_name'] = $row['room_name'], $row_array[$room]['room_id'] = $row['room_id'], $row_array[$room]['component_name'] = $row['component_name'], $row_array[$room]['component_status'] = $row['component_status']);
         
     }
     
    	array_push($types, $row_array);
-    print_r(array_values($row_array));
+    //print_r(array_values($row_array));
     echo json_encode("File wrote from database successful")."\n\n";
     $fp = fopen('newResults.json', 'w');
     fwrite($fp, json_encode($types));
     mysql_close($conn);
 ?>
+

@@ -29,7 +29,12 @@ class oneRoompage: UIViewController {
     @IBOutlet var comp5: UILabel!
     
     
-    
+    //Consumption output
+    @IBOutlet var output1: UILabel!
+    @IBOutlet var output2: UILabel!
+    @IBOutlet var output3: UILabel!
+    @IBOutlet var output4: UILabel!
+    @IBOutlet var output5: UILabel!
     
     var numberOfRows = 0
     var roomsArray = [[String]]()
@@ -46,31 +51,30 @@ class oneRoompage: UIViewController {
        
         
         if (switch1.isOn) {
-            roomsArray[intPassed][1] = "on"
+            roomsArray[intPassed][1] = "ON"
         } else {
-            roomsArray[intPassed][1] = "off"
+            roomsArray[intPassed][1] = "OFF"
         }
         if (switch2.isOn) {
-            roomsArray[intPassed][2] = "on"
+            roomsArray[intPassed][2] = "ON"
         } else {
-            roomsArray[intPassed][2] = "off"
+            roomsArray[intPassed][2] = "OFF"
         }
         if (switch3.isOn) {
-            roomsArray[intPassed][3] = "on"
+            roomsArray[intPassed][3] = "ON"
         } else {
-            roomsArray[intPassed][3] = "off"
+            roomsArray[intPassed][3] = "OFF"
         }
         if (switch4.isOn) {
-            roomsArray[intPassed][4] = "on"
+            roomsArray[intPassed][4] = "ON"
         } else {
-            roomsArray[intPassed][4] = "off"
+            roomsArray[intPassed][4] = "OFF"
         }
         if (switch5.isOn) {
-            roomsArray[intPassed][4] = "on"
+            roomsArray[intPassed][4] = "ON"
         } else {
-            roomsArray[intPassed][4] = "off"
+            roomsArray[intPassed][4] = "OFF"
         }
-        
     }
     
     @IBAction func submitDataButton(_ sender: Any) {
@@ -94,29 +98,29 @@ class oneRoompage: UIViewController {
         }
         
         if (switch1.isOn) {
-            roomsArray[intPassed][1] = "on"
+            roomsArray[intPassed][1] = "ON"
         } else {
-            roomsArray[intPassed][1] = "off"
+            roomsArray[intPassed][1] = "OFF"
         }
         if (switch2.isOn) {
-            roomsArray[intPassed][2] = "on"
+            roomsArray[intPassed][2] = "ON"
         } else {
-            roomsArray[intPassed][2] = "off"
+            roomsArray[intPassed][2] = "OFF"
         }
         if (switch3.isOn) {
-            roomsArray[intPassed][3] = "on"
+            roomsArray[intPassed][3] = "ON"
         } else {
-            roomsArray[intPassed][3] = "off"
+            roomsArray[intPassed][3] = "OFF"
         }
         if (switch4.isOn) {
-            roomsArray[intPassed][4] = "on"
+            roomsArray[intPassed][4] = "ON"
         } else {
-            roomsArray[intPassed][4] = "off"
+            roomsArray[intPassed][4] = "OFF"
         }
         if (switch5.isOn) {
-            roomsArray[intPassed][4] = "on"
+            roomsArray[intPassed][5] = "ON"
         } else {
-            roomsArray[intPassed][4] = "off"
+            roomsArray[intPassed][5] = "OFF"
         }
         
         print(roomsArray)
@@ -158,44 +162,115 @@ class oneRoompage: UIViewController {
     }
     
     func parseJSON() {
-        let path : String = Bundle.main.path(forResource: "results", ofType: "json") as String!
+        let path : String = Bundle.main.path(forResource: "newResults", ofType: "json") as String!
         let roomData = NSData(contentsOfFile: path) as NSData!
         let readableJSON = JSON(data: roomData as! Data, options: JSONSerialization.ReadingOptions.mutableContainers, error: nil)
         
         numberOfRows = readableJSON[0].count
         print("???rows\(numberOfRows)")
         for row in 1...numberOfRows {
-            var Room = "room"
+            var Room = "comp"
             Room += "\(row)"
             var counter = 0
             let id = readableJSON[counter][Room]["customer_id"].string as String!
             if (id == "\(emID)") {
                 let arrayName = readableJSON[counter][Room]["room_name"].string as String!
-                let array1 = readableJSON[counter][Room]["lamp"].string as String!
-                let array2 = readableJSON[counter][Room]["tv"].string as String!
-                let array3 = readableJSON[counter][Room]["roomLight"].string as String!
-                let array4 = readableJSON[counter][Room]["acUnit"].string as String!
+                let array1 = readableJSON[counter][Room]["component_name"].string as String!
+                let array2 = readableJSON[counter][Room]["component_status"].string as String!
                 
-                roomsArray.append([arrayName!, array1!, array2!, array3!, array4!])
-
+                roomsArray.append([arrayName!, array1!, array2!])
             }
             counter += 1
         }
         
-        NSLog("!!!!!room\(roomsArray)")
+        NSLog("!!!!!room \(roomsArray)")
         
         roomName.text = roomsArray[intPassed][0]
+        print("\(intPassed)")
+        var counterComp = 0;
+        if (roomsArray.count >= 1) {
+            comp1.text = roomsArray[counterComp][1]
+            if (roomsArray[counterComp][2] == "ON") {
+                switch1.setOn(true, animated: true)
+            } else {
+                switch1.setOn(false, animated: true)
+            }
+            counterComp += 1
+            if (roomsArray.count >= 2) {
+                comp2.text = roomsArray[counterComp][1]
+                if (roomsArray[counterComp][2] == "ON") {
+                    switch2.setOn(true, animated: true)
+                } else {
+                    switch2.setOn(false, animated: true)
+                }
+                counterComp += 1
+                if (roomsArray.count >= 3) {
+                    comp3.text = roomsArray[counterComp][1]
+                    if (roomsArray[counterComp][2] == "ON") {
+                        switch3.setOn(true, animated: true)
+                    } else {
+                        switch3.setOn(false, animated: true)
+                    }
+                    counterComp += 1
+                    if (roomsArray.count >= 4) {
+                        comp4.text = roomsArray[counterComp][1]
+                        if (roomsArray[counterComp][2] == "ON") {
+                            switch4.setOn(true, animated: true)
+                        } else {
+                            switch4.setOn(false, animated: true)
+                        }
+                        counterComp += 1
+                        if (roomsArray.count >= 5) {
+                            comp5.text = roomsArray[counterComp][1]
+                            if (roomsArray[counterComp][2] == "ON") {
+                                switch5.setOn(true, animated: true)
+                            } else {
+                                switch5.setOn(false, animated: true)
+                            }
+                            counterComp += 1
+                        }
+                        else {
+                            switch5.isHidden = true
+                            comp5.isHidden = true
+                            output5.isHidden = true
+                        }
+                    } else {
+                        switch4.isHidden = true
+                        switch5.isHidden = true
+                        comp4.isHidden = true
+                        comp5.isHidden = true
+                        output4.isHidden = true
+                        output5.isHidden = true
+                    }
+                    
+                } else {
+                    switch3.isHidden = true
+                    switch4.isHidden = true
+                    switch5.isHidden = true
+                    comp3.isHidden = true
+                    comp4.isHidden = true
+                    comp5.isHidden = true
+                    output3.isHidden = true
+                    output4.isHidden = true
+                    output5.isHidden = true
+                }
+            }else {
+                switch2.isHidden = true
+                switch3.isHidden = true
+                switch4.isHidden = true
+                switch5.isHidden = true
+                comp2.isHidden = true
+                comp3.isHidden = true
+                comp4.isHidden = true
+                comp5.isHidden = true
+                output2.isHidden = true
+                output3.isHidden = true
+                output4.isHidden = true
+                output5.isHidden = true
+            }
+        }
         
-        if (roomsArray[intPassed][1] == "on") {
-            switch1.setOn(true, animated: true)
-        } else {
-            switch1.setOn(false, animated: true)
-        }
-        if (roomsArray[intPassed][2] == "on") {
-            switch2.setOn(true, animated: true)
-        } else {
-            switch2.setOn(false, animated: true)
-        }
+        /*
         if (roomsArray[intPassed][3] == "on") {
             switch3.setOn(true, animated: true)
         } else {
@@ -206,11 +281,12 @@ class oneRoompage: UIViewController {
         } else {
             switch4.setOn(false, animated: true)
         }
-        /*if (roomsArray[intPassed][5] == "on") {
+        if (roomsArray[intPassed][5] == "on") {
             switch5.setOn(true, animated: true)
         } else {
             switch5.setOn(false, animated: true)
-        }*/
+        }
+         */
     }
 
     override func didReceiveMemoryWarning() {
