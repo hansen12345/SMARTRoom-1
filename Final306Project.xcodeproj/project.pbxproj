@@ -27,6 +27,8 @@
 		4194CE8C1E82484000A26AB0 /* NewDataRoom.php in Resources */ = {isa = PBXBuildFile; fileRef = 4194CE8B1E82484000A26AB0 /* NewDataRoom.php */; };
 		41B478E21E5D8559005FE52A /* dataRoom.php in Resources */ = {isa = PBXBuildFile; fileRef = 41B478E01E5D8559005FE52A /* dataRoom.php */; };
 		41B478E31E5D8559005FE52A /* results.json in Resources */ = {isa = PBXBuildFile; fileRef = 41B478E11E5D8559005FE52A /* results.json */; };
+		41D23BB11E94635200D6DB40 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D23BB01E94635200D6DB40 /* LocationModel.swift */; };
+		41D23BB71E9463E600D6DB40 /* readPHP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D23BB61E9463E600D6DB40 /* readPHP.swift */; };
 		EE62EBBD1B9AFC8103AEBC0A /* Pods_Final306Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D8D67D80F8ECC382D3F29E /* Pods_Final306Project.framework */; };
 		FADBEDDB1E81E2F700AD381E /* postToDatabase.php in Resources */ = {isa = PBXBuildFile; fileRef = FADBEDDA1E81E2F700AD381E /* postToDatabase.php */; };
 		FADBEDDD1E81E95E00AD381E /* testClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBEDDC1E81E95E00AD381E /* testClass.swift */; };
@@ -77,6 +79,8 @@
 		4194CE8B1E82484000A26AB0 /* NewDataRoom.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = NewDataRoom.php; sourceTree = "<group>"; };
 		41B478E01E5D8559005FE52A /* dataRoom.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = dataRoom.php; sourceTree = "<group>"; };
 		41B478E11E5D8559005FE52A /* results.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = results.json; sourceTree = "<group>"; };
+		41D23BB01E94635200D6DB40 /* LocationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		41D23BB61E9463E600D6DB40 /* readPHP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = readPHP.swift; sourceTree = "<group>"; };
 		534F8FC0A8F31A759307D22D /* Pods-Final306Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final306Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Final306Project/Pods-Final306Project.release.xcconfig"; sourceTree = "<group>"; };
 		A6D8D67D80F8ECC382D3F29E /* Pods_Final306Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final306Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A940E54A3F708FE1D917DF36 /* Pods-Final306Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final306Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Final306Project/Pods-Final306Project.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,8 +145,10 @@
 				41010AB31E2FEA32008CD9F0 /* AppDelegate.swift */,
 				41010AB51E2FEA32008CD9F0 /* ViewController.swift */,
 				41010AB71E2FEA32008CD9F0 /* Main.storyboard */,
+				41D23BB01E94635200D6DB40 /* LocationModel.swift */,
 				416010F11E2FF4850064F9C6 /* MainPageView.swift */,
 				416010F91E3141EA0064F9C6 /* Roompage.swift */,
+				41D23BB61E9463E600D6DB40 /* readPHP.swift */,
 				41606B671E41AED800B823C9 /* oneRoompage.swift */,
 				418BCC6E1E6694B700D6C225 /* SMARTRoom.php */,
 				41606B5C1E4185A300B823C9 /* loginUser.json */,
@@ -398,9 +404,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41D23BB11E94635200D6DB40 /* LocationModel.swift in Sources */,
 				416010FA1E3141EA0064F9C6 /* Roompage.swift in Sources */,
 				FADBEDDD1E81E95E00AD381E /* testClass.swift in Sources */,
 				41010AB61E2FEA32008CD9F0 /* ViewController.swift in Sources */,
+				41D23BB71E9463E600D6DB40 /* readPHP.swift in Sources */,
 				41606B681E41AED800B823C9 /* oneRoompage.swift in Sources */,
 				41010AB41E2FEA32008CD9F0 /* AppDelegate.swift in Sources */,
 				416010F21E2FF4850064F9C6 /* MainPageView.swift in Sources */,

@@ -13,10 +13,9 @@ class RoomPage: UITableViewController {
     
     var numberOfRows = 0
     var roomsArray = [String]()
-    var compareArray = [String]()
     var roomInt = Int()
     var roomInt2 = Int()
-    
+    var finalArray = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,10 +27,10 @@ class RoomPage: UITableViewController {
         let roomData = NSData(contentsOfFile: path) as NSData!
         let readableJSON = JSON(data: roomData as! Data, options: JSONSerialization.ReadingOptions.mutableContainers, error: nil)
         
-        numberOfRows = readableJSON[0].count
+        numberOfRows = readableJSON[].count
         roomInt2 = 1
-        
-        for i in 1...numberOfRows {
+        print("# of rows \(numberOfRows)")
+        for i in 0...numberOfRows {
             
             var Room = "comp"
             var nextRoom = "comp"
@@ -40,40 +39,50 @@ class RoomPage: UITableViewController {
             
             var roomCount = 0
             
-            let emID = readableJSON[roomCount][Room]["customer_id"].string as String!
-            let hasComponents = readableJSON[roomCount][Room]["room_name"].string as String!
+            let emID = readableJSON["Component"][roomCount]["customer_id"].string as String!
+            //let hasComponents = readableJSON["Component"][roomCount]["room_name"].string as String!
             
-            //print("employee ID \(emID)")
-            //print("ROOM Int 2 \(roomInt2)")
             
             if (emID == "\(roomInt2)") {
                 roomInt = roomInt2
-                let rooms = readableJSON[roomCount][Room]["room_name"].string as String!
+                let rooms = readableJSON["Component"][roomCount]["room_name"].string as String!
                 
-                print("HEY \(rooms)")
-                compareArray.append(rooms!)
                 roomsArray.append(rooms!)
-                /*
-                if (hasComponents == compareArray[roomCount]) {
-                    roomsArray.append(rooms!)
-                }
-                */
+                finalArray = removeDuplicates(array: roomsArray)
+                print("ROOMS FOR THE COMP\(finalArray)")
             }
             roomCount += 1
         }
-        print("ROOMS FOR THE COMP\(roomsArray)")
+        print("ROOMS FOR THE COMP\(finalArray)")
+    }
+    
+    func removeDuplicates(array: [String]) -> [String] {
+        var encountered = Set<String>()
+        var result: [String] = []
+        for value in array {
+            if encountered.contains(value) {
+                // Do not add a duplicate element.
+            }
+            else {
+                // Add value to the set.
+                encountered.insert(value)
+                // ... Append the value.
+                result.append(value)
+            }
+        }
+        return result
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return roomsArray.count
+        return finalArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) 
         //print(indexPath.row)
-        cell.textLabel?.text = roomsArray[indexPath.row]
+        cell.textLabel?.text = finalArray[indexPath.row]
         
         return cell
     }

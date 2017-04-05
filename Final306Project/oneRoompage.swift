@@ -41,6 +41,10 @@ class oneRoompage: UIViewController {
     //DATA TEST
     var intPassed = Int()
     var emID = Int()
+    
+    
+    
+    
     @IBAction func defaultRoom(_ sender: Any) {
         
         switch1.setOn(false, animated: true)
@@ -49,32 +53,48 @@ class oneRoompage: UIViewController {
         switch4.setOn(false, animated: true)
         switch5.setOn(false, animated: true)
        
-        
         if (switch1.isOn) {
             roomsArray[intPassed][1] = "ON"
+            if (roomsArray.count >= 2) {
+                if (switch2.isOn) {
+                    roomsArray[intPassed][2] = "ON"
+                    if (roomsArray.count >= 3) {
+                        if (switch3.isOn) {
+                            roomsArray[intPassed][3] = "ON"
+                            if (roomsArray.count >= 4) {
+                                if (switch4.isOn) {
+                                    roomsArray[intPassed][4] = "ON"
+                                    if (roomsArray.count >= 5) {
+                                        if (switch5.isOn) {
+                                            roomsArray[intPassed][5] = "ON"
+                                        } else {
+                                            roomsArray[intPassed][5] = "OFF"
+                                        }
+                                    }
+                                } else {
+                                    roomsArray[intPassed][4] = "OFF"
+                                    
+                                }
+                            }
+                        } else {
+                            roomsArray[intPassed][3] = "OFF"
+                            
+                        }
+                    }
+                    
+                } else {
+                    roomsArray[intPassed][2] = "OFF"
+                    
+                }
+            }
         } else {
             roomsArray[intPassed][1] = "OFF"
+            
         }
-        if (switch2.isOn) {
-            roomsArray[intPassed][2] = "ON"
-        } else {
-            roomsArray[intPassed][2] = "OFF"
-        }
-        if (switch3.isOn) {
-            roomsArray[intPassed][3] = "ON"
-        } else {
-            roomsArray[intPassed][3] = "OFF"
-        }
-        if (switch4.isOn) {
-            roomsArray[intPassed][4] = "ON"
-        } else {
-            roomsArray[intPassed][4] = "OFF"
-        }
-        if (switch5.isOn) {
-            roomsArray[intPassed][4] = "ON"
-        } else {
-            roomsArray[intPassed][4] = "OFF"
-        }
+        
+        
+        
+        print(roomsArray)
     }
     
     @IBAction func submitDataButton(_ sender: Any) {
@@ -98,30 +118,45 @@ class oneRoompage: UIViewController {
         }
         
         if (switch1.isOn) {
-            roomsArray[intPassed][1] = "ON"
-        } else {
-            roomsArray[intPassed][1] = "OFF"
-        }
-        if (switch2.isOn) {
             roomsArray[intPassed][2] = "ON"
+            if (roomsArray.count >= 2) {
+                if (switch2.isOn) {
+                    roomsArray[intPassed][2] = "ON"
+                    if (roomsArray.count >= 3) {
+                        if (switch3.isOn) {
+                            roomsArray[intPassed][2] = "ON"
+                            if (roomsArray.count >= 4) {
+                                if (switch4.isOn) {
+                                    roomsArray[intPassed][2] = "ON"
+                                    if (roomsArray.count >= 5) {
+                                        if (switch5.isOn) {
+                                            roomsArray[intPassed][2] = "ON"
+                                        } else {
+                                            roomsArray[intPassed][2] = "OFF"
+                                        }
+                                    }
+                                } else {
+                                    roomsArray[intPassed][2] = "OFF"
+                                    
+                                }
+                            }
+                        } else {
+                            roomsArray[intPassed][2] = "OFF"
+                            
+                        }
+                    }
+
+                } else {
+                    roomsArray[intPassed][2] = "OFF"
+                    
+                }
+            }
         } else {
             roomsArray[intPassed][2] = "OFF"
+            
         }
-        if (switch3.isOn) {
-            roomsArray[intPassed][3] = "ON"
-        } else {
-            roomsArray[intPassed][3] = "OFF"
-        }
-        if (switch4.isOn) {
-            roomsArray[intPassed][4] = "ON"
-        } else {
-            roomsArray[intPassed][4] = "OFF"
-        }
-        if (switch5.isOn) {
-            roomsArray[intPassed][5] = "ON"
-        } else {
-            roomsArray[intPassed][5] = "OFF"
-        }
+        
+        
         
         print(roomsArray)
         
@@ -166,17 +201,18 @@ class oneRoompage: UIViewController {
         let roomData = NSData(contentsOfFile: path) as NSData!
         let readableJSON = JSON(data: roomData as! Data, options: JSONSerialization.ReadingOptions.mutableContainers, error: nil)
         
-        numberOfRows = readableJSON[0].count
+        numberOfRows = readableJSON[].count
         print("???rows\(numberOfRows)")
-        for row in 1...numberOfRows {
+        for row in 0...numberOfRows {
             var Room = "comp"
             Room += "\(row)"
             var counter = 0
-            let id = readableJSON[counter][Room]["customer_id"].string as String!
+            let id = readableJSON["Component"][counter]["customer_id"].string as String!
+            
             if (id == "\(emID)") {
-                let arrayName = readableJSON[counter][Room]["room_name"].string as String!
-                let array1 = readableJSON[counter][Room]["component_name"].string as String!
-                let array2 = readableJSON[counter][Room]["component_status"].string as String!
+                let arrayName = readableJSON["Component"][counter]["room_name"].string as String!
+                let array1 = readableJSON["Component"][counter]["component_name"].string as String!
+                let array2 = readableJSON["Component"][counter]["component_status"].string as String!
                 
                 roomsArray.append([arrayName!, array1!, array2!])
             }

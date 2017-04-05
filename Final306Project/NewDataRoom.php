@@ -17,22 +17,31 @@
         die('Could not get data: ' . mysql_error());
     }
     
-    $types = array();
+    $types['Component'] = array();
     $room = "room";
     $inside = array();
     $count = 0;
     while($row = mysql_fetch_assoc($retval)) {
         $count++;
         $room = "comp$count";
-        $inside = array($row_array[$room]['customer_id'] = $row['customer_id'], $row_array[$room]['room_name'] = $row['room_name'], $row_array[$room]['room_id'] = $row['room_id'], $row_array[$room]['component_name'] = $row['component_name'], $row_array[$room]['component_status'] = $row['component_status']);
+        $customerID = $row['customer_id'];
+        $roomName = $row['room_name'];
+        $roomID = $row['room_id'];
+        $componentName = $row['component_name'];
+        $componentStatus = $row['component_status'];
         
+        $inside = array($row_array['customer_id'] = $row['customer_id'], $row_array['room_name'] = $row['room_name'], $row_array['room_id'] = $row['room_id'], $row_array['component_name'] = $row['component_name'], $row_array['component_status'] = $row['component_status']);
+        
+        array_push($types['Component'], $row_array);
     }
     
-   	array_push($types, $row_array);
     //print_r(array_values($row_array));
-    echo json_encode("File wrote from database successful")."\n\n";
+    
+    echo json_encode($types)."\n\n";
+    
     $fp = fopen('newResults.json', 'w');
     fwrite($fp, json_encode($types));
+    
     mysql_close($conn);
 ?>
 
