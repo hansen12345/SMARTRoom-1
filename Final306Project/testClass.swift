@@ -20,13 +20,12 @@ import SwiftyJSON
 class TestClass: UIViewController {
     
     let myUrlData:String = "http://52.24.214.101/NewDataRoom.php"
+    var roomsArray = [[String]]()
     
     @IBOutlet weak var onOff: UISwitch!
     @IBOutlet weak var onOffLabel: UILabel!
     
     @IBOutlet weak var testLabel: UILabel!
-    
-    var roomsArray = [[String]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -135,6 +134,8 @@ class TestClass: UIViewController {
                         }
                     }
                 }
+                print(self.roomsArray)
+                self.testLabel.text = self.roomsArray[0][1]
                 
                 OperationQueue.main.addOperation({
                     //calling another function after fetching the json

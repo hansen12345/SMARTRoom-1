@@ -37,10 +37,12 @@ class oneRoompage: UIViewController {
     @IBOutlet var output5: UILabel!
     
     var numberOfRows = 0
+    let myUrlData:String = "http://52.24.214.101/NewDataRoom.php"
     var roomsArray = [[String]]()
+    var finalArray = [[String]]()
     //DATA TEST
     var intPassed = Int()
-    var emID = Int()
+    var emID = 1
     
     
     
@@ -94,7 +96,7 @@ class oneRoompage: UIViewController {
         
         
         
-        print(roomsArray)
+        //print(roomsArray)
     }
     
     @IBAction func submitDataButton(_ sender: Any) {
@@ -158,7 +160,7 @@ class oneRoompage: UIViewController {
         
         
         
-        print(roomsArray)
+        //print(roomsArray)
         
         /* creating an array of test data
         var newRoomArray = [String]()
@@ -192,137 +194,85 @@ class oneRoompage: UIViewController {
         
         //DATA TEST
         NSLog("!!!!!!!!!!!!!!!!!!!!\(intPassed)")
+        self.comp3.isHidden = true
+        self.comp4.isHidden = true
+        self.comp5.isHidden = true
+        
+        self.switch3.isHidden = true
+        self.switch4.isHidden = true
+        self.switch5.isHidden = true
+        
+        self.output2.isHidden = true
+        self.output3.isHidden = true
+        self.output4.isHidden = true
+        self.output5.isHidden = true
         
         parseJSON()
     }
     
     func parseJSON() {
-        let path : String = Bundle.main.path(forResource: "newResults", ofType: "json") as String!
-        let roomData = NSData(contentsOfFile: path) as NSData!
-        let readableJSON = JSON(data: roomData as! Data, options: JSONSerialization.ReadingOptions.mutableContainers, error: nil)
+        //creating a NSURL
+        let url = NSURL(string: myUrlData)
         
-        numberOfRows = readableJSON[].count
-        print("???rows\(numberOfRows)")
-        for row in 0...numberOfRows {
-            var Room = "comp"
-            Room += "\(row)"
-            var counter = 0
-            let id = readableJSON["Component"][counter]["customer_id"].string as String!
+        //fetching the data from the url
+        URLSession.shared.dataTask(with: (url as? URL)!, completionHandler: {(data, response, error) -> Void in
             
-            if (id == "\(emID)") {
-                let arrayName = readableJSON["Component"][counter]["room_name"].string as String!
-                let array1 = readableJSON["Component"][counter]["component_name"].string as String!
-                let array2 = readableJSON["Component"][counter]["component_status"].string as String!
+            if let jsonObj = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? NSDictionary {
                 
-                roomsArray.append([arrayName!, array1!, array2!])
-            }
-            counter += 1
-        }
-        
-        NSLog("!!!!!room \(roomsArray)")
-        
-        roomName.text = roomsArray[intPassed][0]
-        print("\(intPassed)")
-        var counterComp = 0;
-        if (roomsArray.count >= 1) {
-            comp1.text = roomsArray[counterComp][1]
-            if (roomsArray[counterComp][2] == "ON") {
-                switch1.setOn(true, animated: true)
-            } else {
-                switch1.setOn(false, animated: true)
-            }
-            counterComp += 1
-            if (roomsArray.count >= 2) {
-                comp2.text = roomsArray[counterComp][1]
-                if (roomsArray[counterComp][2] == "ON") {
-                    switch2.setOn(true, animated: true)
-                } else {
-                    switch2.setOn(false, animated: true)
-                }
-                counterComp += 1
-                if (roomsArray.count >= 3) {
-                    comp3.text = roomsArray[counterComp][1]
-                    if (roomsArray[counterComp][2] == "ON") {
-                        switch3.setOn(true, animated: true)
-                    } else {
-                        switch3.setOn(false, animated: true)
-                    }
-                    counterComp += 1
-                    if (roomsArray.count >= 4) {
-                        comp4.text = roomsArray[counterComp][1]
-                        if (roomsArray[counterComp][2] == "ON") {
-                            switch4.setOn(true, animated: true)
-                        } else {
-                            switch4.setOn(false, animated: true)
-                        }
-                        counterComp += 1
-                        if (roomsArray.count >= 5) {
-                            comp5.text = roomsArray[counterComp][1]
-                            if (roomsArray[counterComp][2] == "ON") {
-                                switch5.setOn(true, animated: true)
-                            } else {
-                                switch5.setOn(false, animated: true)
+                //printing the json in console
+                //print(jsonObj!.value(forKey: "Component")!)
+                
+                //getting the avengers tag array from json and converting it to NSArray
+                if let heroeArray = jsonObj!.value(forKey: "Component") as? NSArray {
+                    //looping through all the elements
+                    for heroe in heroeArray{
+                        
+                        //converting the element to a dictionary
+                        if let heroeDict = heroe as? NSDictionary {
+                            
+                            //getting the name from the dictionary
+                            if let custID = heroeDict.value(forKey: "customer_id"), let roomName = heroeDict.value(forKey: "room_name"), let roomID = heroeDict.value(forKey: "room_id"), let compName = heroeDict.value(forKey: "component_name"), let compStatus = heroeDict.value(forKey: "component_status") {
+                                
+                                //adding the name to the array
+                                self.roomsArray.append([(custID as? String)!,(roomName as? String)!,(roomID as? String)!,(compName as? String)!,(compStatus as? String)!])
                             }
-                            counterComp += 1
+                            
                         }
-                        else {
-                            switch5.isHidden = true
-                            comp5.isHidden = true
-                            output5.isHidden = true
-                        }
-                    } else {
-                        switch4.isHidden = true
-                        switch5.isHidden = true
-                        comp4.isHidden = true
-                        comp5.isHidden = true
-                        output4.isHidden = true
-                        output5.isHidden = true
                     }
-                    
-                } else {
-                    switch3.isHidden = true
-                    switch4.isHidden = true
-                    switch5.isHidden = true
-                    comp3.isHidden = true
-                    comp4.isHidden = true
-                    comp5.isHidden = true
-                    output3.isHidden = true
-                    output4.isHidden = true
-                    output5.isHidden = true
                 }
-            }else {
-                switch2.isHidden = true
-                switch3.isHidden = true
-                switch4.isHidden = true
-                switch5.isHidden = true
-                comp2.isHidden = true
-                comp3.isHidden = true
-                comp4.isHidden = true
-                comp5.isHidden = true
-                output2.isHidden = true
-                output3.isHidden = true
-                output4.isHidden = true
-                output5.isHidden = true
+                print(self.roomsArray)
+                let counter = self.roomsArray.count-1
+                
+                for i in 0...counter {
+                    if ("\(self.emID)" == self.roomsArray[0][0] as String) {
+                        self.roomName.text = self.roomsArray[0][1]
+                        self.comp1.text = self.roomsArray[0][3]
+                        if (self.roomsArray[i][4] == "ON") {
+                            self.switch1.setOn(true, animated: true)
+                        } else {
+                            self.switch1.setOn(false, animated: true)
+                        }
+                        if(counter >= 2) {
+                            self.comp2.text = self.roomsArray[1][3]
+                            if (self.roomsArray[1][4] == "ON") {
+                              self.switch2.setOn(true, animated: true)
+                            } else {
+                                self.switch2.setOn(false, animated: true)
+                            }
+                        }
+                    }
+                
+                
+                        
+                }
+                
+                OperationQueue.main.addOperation({
+                    //calling another function after fetching the json
+                    //it will show the names to label
+                    
+                })
             }
-        }
-        
-        /*
-        if (roomsArray[intPassed][3] == "on") {
-            switch3.setOn(true, animated: true)
-        } else {
-            switch3.setOn(false, animated: true)
-        }
-        if (roomsArray[intPassed][4] == "on") {
-            switch4.setOn(true, animated: true)
-        } else {
-            switch4.setOn(false, animated: true)
-        }
-        if (roomsArray[intPassed][5] == "on") {
-            switch5.setOn(true, animated: true)
-        } else {
-            switch5.setOn(false, animated: true)
-        }
-         */
+        }).resume()
     }
 
     override func didReceiveMemoryWarning() {

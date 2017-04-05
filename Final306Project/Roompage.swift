@@ -10,50 +10,68 @@ import UIKit
 import SwiftyJSON
 
 class RoomPage: UITableViewController {
+    let myUrlData:String = "http://52.24.214.101/NewDataRoom.php"
+    var roomsArray = [[String]]()
     
     var numberOfRows = 0
-    var roomsArray = [String]()
     var roomInt = Int()
     var roomInt2 = Int()
     var finalArray = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         parseJSON()
     }
     
     func parseJSON() {
-        let path : String = Bundle.main.path(forResource: "newResults", ofType: "json") as String!
-        let roomData = NSData(contentsOfFile: path) as NSData!
-        let readableJSON = JSON(data: roomData as! Data, options: JSONSerialization.ReadingOptions.mutableContainers, error: nil)
+        //creating a NSURL
+        var passInt = 1
+        let url = NSURL(string: myUrlData)
         
-        numberOfRows = readableJSON[].count
-        roomInt2 = 1
-        print("# of rows \(numberOfRows)")
-        for i in 0...numberOfRows {
+        //fetching the data from the url
+        URLSession.shared.dataTask(with: (url as? URL)!, completionHandler: {(data, response, error) -> Void in
             
-            var Room = "comp"
-            var nextRoom = "comp"
-            Room += "\(i)"
-            nextRoom += "\(i+1)"
-            
-            var roomCount = 0
-            
-            let emID = readableJSON["Component"][roomCount]["customer_id"].string as String!
-            //let hasComponents = readableJSON["Component"][roomCount]["room_name"].string as String!
-            
-            
-            if (emID == "\(roomInt2)") {
-                roomInt = roomInt2
-                let rooms = readableJSON["Component"][roomCount]["room_name"].string as String!
+            if let jsonObj = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? NSDictionary {
                 
-                roomsArray.append(rooms!)
-                finalArray = removeDuplicates(array: roomsArray)
-                print("ROOMS FOR THE COMP\(finalArray)")
+                //printing the json in console
+                //print(jsonObj!.value(forKey: "Component")!)
+                
+                //getting the avengers tag array from json and converting it to NSArray
+                if let heroeArray = jsonObj!.value(forKey: "Component") as? NSArray {
+                    //looping through all the elements
+                    for heroe in heroeArray{
+                        
+                        //converting the element to a dictionary
+                        if let heroeDict = heroe as? NSDictionary {
+                            
+                            //getting the name from the dictionary
+                            if let custID = heroeDict.value(forKey: "customer_id"), let roomName = heroeDict.value(forKey: "room_name"), let roomID = heroeDict.value(forKey: "room_id"), let compName = heroeDict.value(forKey: "component_name"), let compStatus = heroeDict.value(forKey: "component_status") {
+                                
+                                //adding the name to the array
+                                self.roomsArray.append([(custID as? String)!,(roomName as? String)!,(roomID as? String)!,(compName as? String)!,(compStatus as? String)!])
+                            }
+                            
+                        }
+                    }
+                }
+                
+                //print(self.roomsArray)
+                var counter = self.roomsArray.count-1
+                for i in 0...counter {
+                    if ("\(passInt)" == self.roomsArray[i][0] as String) {
+                        self.finalArray.append(self.roomsArray[i][1])
+                    }
+                }
+                self.finalArray = self.removeDuplicates(array: self.finalArray)
+                
+                OperationQueue.main.addOperation({
+                    //calling another function after fetching the json
+                    //it will show the names to label
+                    
+                })
             }
-            roomCount += 1
-        }
-        print("ROOMS FOR THE COMP\(finalArray)")
+            
+        }).resume()
     }
     
     func removeDuplicates(array: [String]) -> [String] {
@@ -74,6 +92,7 @@ class RoomPage: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("TEST 2")
         
         return finalArray.count
     }
@@ -82,6 +101,7 @@ class RoomPage: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) 
         //print(indexPath.row)
+        print("TEST 1")
         cell.textLabel?.text = finalArray[indexPath.row]
         
         return cell

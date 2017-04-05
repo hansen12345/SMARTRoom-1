@@ -91,15 +91,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiZ-3W-1F1">
-                                <rect key="frame" x="155" y="506" width="65" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.21840221360000001" green="0.81009148320000002" blue="0.1240042667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Light test"/>
-                                <connections>
-                                    <segue destination="z5J-Mg-ZsE" kind="showDetail" id="LPh-Au-oYB"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843139999996" green="0.91764705879999997" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -166,9 +157,6 @@
                                 <rect key="frame" x="160" y="597" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="HOme"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="showDetail" id="IeD-2A-mUZ"/>
-                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ijk-ZE-Jaq">
                                 <rect key="frame" x="156" y="264" width="51" height="31"/>
@@ -269,6 +257,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVv-dz-2O1">
+                                <rect key="frame" x="281" y="119" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="View Room"/>
+                                <connections>
+                                    <segue destination="U7h-ly-EVE" kind="show" id="Qgf-R6-4Fm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843139999996" green="0.91764705879999997" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -300,7 +296,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jp0-Hg-EQ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="652" y="138.98050974512745"/>
+            <point key="canvasLocation" x="772" y="-239"/>
         </scene>
         <!--Title-->
         <scene sceneID="Dye-vx-cQw">
@@ -323,7 +319,7 @@
                                     <segue destination="U7h-ly-EVE" kind="show" identifier="yourSegue" id="dno-cW-BTu"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="46" id="ViZ-Ob-dpL">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellProto" rowHeight="46" id="ViZ-Ob-dpL">
                                 <rect key="frame" x="0.0" y="80" width="375" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ViZ-Ob-dpL" id="VMJ-aT-XHt">
@@ -524,14 +520,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MVl-mY-cUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1638" y="-153"/>
+            <point key="canvasLocation" x="1527" y="-265"/>
         </scene>
     </scenes>
     <resources>
         <image name="logo.png" width="900" height="675"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lgq-Ek-wTA"/>
-        <segue reference="IeD-2A-mUZ"/>
+        <segue reference="Vbd-Om-Bvd"/>
+        <segue reference="Qgf-R6-4Fm"/>
     </inferredMetricsTieBreakers>
 </document>
