@@ -17,6 +17,7 @@ class RoomPage: UITableViewController {
     var roomInt = Int()
     var roomInt2 = Int()
     var finalArray = [String]()
+    var listArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class RoomPage: UITableViewController {
     
     func parseJSON() {
         //creating a NSURL
-        var passInt = 1
+        let passInt = 1
         let url = NSURL(string: myUrlData)
         
         //fetching the data from the url
@@ -56,7 +57,7 @@ class RoomPage: UITableViewController {
                 }
                 
                 //print(self.roomsArray)
-                var counter = self.roomsArray.count-1
+                let counter = self.roomsArray.count-1
                 for i in 0...counter {
                     if ("\(passInt)" == self.roomsArray[i][0] as String) {
                         self.finalArray.append(self.roomsArray[i][1])
@@ -67,11 +68,22 @@ class RoomPage: UITableViewController {
                 OperationQueue.main.addOperation({
                     //calling another function after fetching the json
                     //it will show the names to label
-                    
+                    self.showNames()
                 })
             }
             
         }).resume()
+    }
+    
+    func showNames(){
+        //looing through all the elements of the array
+        for roomName in finalArray{
+            
+            //appending the names to label
+            listArray.append(roomName)
+            
+            print("ROOMS \(listArray)")
+        }
     }
     
     func removeDuplicates(array: [String]) -> [String] {
@@ -94,7 +106,7 @@ class RoomPage: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("TEST 2")
         
-        return finalArray.count
+        return listArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -102,7 +114,7 @@ class RoomPage: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) 
         //print(indexPath.row)
         print("TEST 1")
-        cell.textLabel?.text = finalArray[indexPath.row]
+        cell.textLabel?.text = listArray[indexPath.row]
         
         return cell
     }

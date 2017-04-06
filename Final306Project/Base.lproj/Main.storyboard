@@ -349,7 +349,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Xv3-f6-PRI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5b3-Xw-nnX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="439"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="95P-Nr-4N3">
@@ -528,6 +528,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Vbd-Om-Bvd"/>
-        <segue reference="Qgf-R6-4Fm"/>
+        <segue reference="dno-cW-BTu"/>
     </inferredMetricsTieBreakers>
 </document>

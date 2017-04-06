@@ -241,38 +241,40 @@ class oneRoompage: UIViewController {
                     }
                 }
                 print(self.roomsArray)
-                let counter = self.roomsArray.count-1
                 
-                for i in 0...counter {
-                    if ("\(self.emID)" == self.roomsArray[0][0] as String) {
-                        self.roomName.text = self.roomsArray[0][1]
-                        self.comp1.text = self.roomsArray[0][3]
-                        if (self.roomsArray[i][4] == "ON") {
-                            self.switch1.setOn(true, animated: true)
-                        } else {
-                            self.switch1.setOn(false, animated: true)
-                        }
-                        if(counter >= 2) {
-                            self.comp2.text = self.roomsArray[1][3]
-                            if (self.roomsArray[1][4] == "ON") {
-                              self.switch2.setOn(true, animated: true)
-                            } else {
-                                self.switch2.setOn(false, animated: true)
-                            }
-                        }
-                    }
-                
-                
-                        
-                }
                 
                 OperationQueue.main.addOperation({
                     //calling another function after fetching the json
                     //it will show the names to label
-                    
+                    self.showComp()
                 })
             }
         }).resume()
+    }
+    
+    func showComp(){
+        //looing through all the elements of the array
+        let counter = self.roomsArray.count-1
+        
+        for i in 0...counter {
+            if ("\(self.emID)" == self.roomsArray[0][0] as String) {
+                self.roomName.text = self.roomsArray[0][1]
+                self.comp1.text = self.roomsArray[0][3]
+                if (self.roomsArray[i][4] == "ON") {
+                    self.switch1.setOn(true, animated: true)
+                } else {
+                    self.switch1.setOn(false, animated: true)
+                }
+                if(counter >= 2) {
+                    self.comp2.text = self.roomsArray[1][3]
+                    if (self.roomsArray[1][4] == "ON") {
+                        self.switch2.setOn(true, animated: true)
+                    } else {
+                        self.switch2.setOn(false, animated: true)
+                    }
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
