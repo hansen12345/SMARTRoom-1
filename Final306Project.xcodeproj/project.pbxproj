@@ -17,13 +17,20 @@
 		416010F21E2FF4850064F9C6 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416010F11E2FF4850064F9C6 /* MainPageView.swift */; };
 		416010FA1E3141EA0064F9C6 /* Roompage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416010F91E3141EA0064F9C6 /* Roompage.swift */; };
 		41606B5D1E4185A300B823C9 /* loginUser.json in Resources */ = {isa = PBXBuildFile; fileRef = 41606B5C1E4185A300B823C9 /* loginUser.json */; };
-		41606B5F1E4186D300B823C9 /* dataRoom.json in Resources */ = {isa = PBXBuildFile; fileRef = 41606B5E1E4186D300B823C9 /* dataRoom.json */; };
 		41606B661E418E1C00B823C9 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 41606B651E418E1C00B823C9 /* Podfile */; };
 		41606B681E41AED800B823C9 /* oneRoompage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41606B671E41AED800B823C9 /* oneRoompage.swift */; };
 		41606B721E491E3000B823C9 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 41606B711E491E3000B823C9 /* logo.png */; };
+		4162711D1E89F59500CB8CDC /* newResults.json in Resources */ = {isa = PBXBuildFile; fileRef = 4162711C1E89F59500CB8CDC /* newResults.json */; };
+		418BCC6F1E6694B700D6C225 /* SMARTRoom.php in Resources */ = {isa = PBXBuildFile; fileRef = 418BCC6E1E6694B700D6C225 /* SMARTRoom.php */; };
+		4194CE8C1E82484000A26AB0 /* NewDataRoom.php in Resources */ = {isa = PBXBuildFile; fileRef = 4194CE8B1E82484000A26AB0 /* NewDataRoom.php */; };
 		EE62EBBD1B9AFC8103AEBC0A /* Pods_Final306Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D8D67D80F8ECC382D3F29E /* Pods_Final306Project.framework */; };
+<<<<<<< HEAD
 		FAB16DB21E5C0E2300D3B0FF /* smarthomeback.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAB16DB11E5C0E2300D3B0FF /* smarthomeback.jpg */; };
 		FAB16DB41E5C131000D3B0FF /* splash screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAB16DB31E5C131000D3B0FF /* splash screen.jpg */; };
+=======
+		FADBEDDB1E81E2F700AD381E /* postToDatabase.php in Resources */ = {isa = PBXBuildFile; fileRef = FADBEDDA1E81E2F700AD381E /* postToDatabase.php */; };
+		FADBEDDD1E81E95E00AD381E /* testClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBEDDC1E81E95E00AD381E /* testClass.swift */; };
+>>>>>>> garciapn/master
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,15 +67,22 @@
 		416010F11E2FF4850064F9C6 /* MainPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainPageView.swift; path = ../MainPageView.swift; sourceTree = "<group>"; };
 		416010F91E3141EA0064F9C6 /* Roompage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Roompage.swift; sourceTree = "<group>"; };
 		41606B5C1E4185A300B823C9 /* loginUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loginUser.json; sourceTree = "<group>"; };
-		41606B5E1E4186D300B823C9 /* dataRoom.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dataRoom.json; sourceTree = "<group>"; };
 		41606B651E418E1C00B823C9 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		41606B671E41AED800B823C9 /* oneRoompage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = oneRoompage.swift; sourceTree = "<group>"; };
 		41606B711E491E3000B823C9 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		4162711C1E89F59500CB8CDC /* newResults.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newResults.json; sourceTree = "<group>"; };
+		418BCC6E1E6694B700D6C225 /* SMARTRoom.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = SMARTRoom.php; sourceTree = "<group>"; };
+		4194CE8B1E82484000A26AB0 /* NewDataRoom.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = NewDataRoom.php; sourceTree = "<group>"; };
 		534F8FC0A8F31A759307D22D /* Pods-Final306Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final306Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Final306Project/Pods-Final306Project.release.xcconfig"; sourceTree = "<group>"; };
 		A6D8D67D80F8ECC382D3F29E /* Pods_Final306Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final306Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A940E54A3F708FE1D917DF36 /* Pods-Final306Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final306Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Final306Project/Pods-Final306Project.debug.xcconfig"; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		FAB16DB11E5C0E2300D3B0FF /* smarthomeback.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = smarthomeback.jpg; path = ../../../Desktop/smarthomeback.jpg; sourceTree = "<group>"; };
 		FAB16DB31E5C131000D3B0FF /* splash screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "splash screen.jpg"; path = "../../../Downloads/splash screen.jpg"; sourceTree = "<group>"; };
+=======
+		FADBEDDA1E81E2F700AD381E /* postToDatabase.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = postToDatabase.php; sourceTree = "<group>"; };
+		FADBEDDC1E81E95E00AD381E /* testClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testClass.swift; sourceTree = "<group>"; };
+>>>>>>> garciapn/master
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,10 +147,14 @@
 				416010F91E3141EA0064F9C6 /* Roompage.swift */,
 				41606B671E41AED800B823C9 /* oneRoompage.swift */,
 				41606B5C1E4185A300B823C9 /* loginUser.json */,
-				41606B5E1E4186D300B823C9 /* dataRoom.json */,
+				4162711C1E89F59500CB8CDC /* newResults.json */,
+				418BCC6E1E6694B700D6C225 /* SMARTRoom.php */,
+				4194CE8B1E82484000A26AB0 /* NewDataRoom.php */,
+				FADBEDDA1E81E2F700AD381E /* postToDatabase.php */,
+				41010ABF1E2FEA33008CD9F0 /* Info.plist */,
+				FADBEDDC1E81E95E00AD381E /* testClass.swift */,
 				41010ABA1E2FEA33008CD9F0 /* Assets.xcassets */,
 				41010ABC1E2FEA33008CD9F0 /* LaunchScreen.storyboard */,
-				41010ABF1E2FEA33008CD9F0 /* Info.plist */,
 			);
 			path = Final306Project;
 			sourceTree = "<group>";
@@ -292,11 +310,17 @@
 			files = (
 				FAB16DB41E5C131000D3B0FF /* splash screen.jpg in Resources */,
 				41606B721E491E3000B823C9 /* logo.png in Resources */,
+<<<<<<< HEAD
 				FAB16DB21E5C0E2300D3B0FF /* smarthomeback.jpg in Resources */,
+=======
+				FADBEDDB1E81E2F700AD381E /* postToDatabase.php in Resources */,
+				418BCC6F1E6694B700D6C225 /* SMARTRoom.php in Resources */,
+>>>>>>> garciapn/master
 				41606B661E418E1C00B823C9 /* Podfile in Resources */,
-				41606B5F1E4186D300B823C9 /* dataRoom.json in Resources */,
 				41010ABE1E2FEA33008CD9F0 /* LaunchScreen.storyboard in Resources */,
 				41010ABB1E2FEA33008CD9F0 /* Assets.xcassets in Resources */,
+				4194CE8C1E82484000A26AB0 /* NewDataRoom.php in Resources */,
+				4162711D1E89F59500CB8CDC /* newResults.json in Resources */,
 				41606B5D1E4185A300B823C9 /* loginUser.json in Resources */,
 				41010AB91E2FEA32008CD9F0 /* Main.storyboard in Resources */,
 			);
@@ -372,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				416010FA1E3141EA0064F9C6 /* Roompage.swift in Sources */,
+				FADBEDDD1E81E95E00AD381E /* testClass.swift in Sources */,
 				41010AB61E2FEA32008CD9F0 /* ViewController.swift in Sources */,
 				41606B681E41AED800B823C9 /* oneRoompage.swift in Sources */,
 				41010AB41E2FEA32008CD9F0 /* AppDelegate.swift in Sources */,

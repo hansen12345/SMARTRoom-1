@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Connecting MySQL Server</title>
+</head>
+<body>
+<?php 
+   
+   $dbhost = '127.0.0.1:3306';
+   $dbuser = 'root';
+   $dbpass = 'Pngflip94!';
+   $conn = mysql_connect($dbhost, $dbuser, $dbpass);
+   
+   if(! $conn )
+   {
+     die('Could not connect: ' . mysql_error());
+   }
+   $sql = 'SELECT * FROM Rooms';
+   mysql_select_db('testRoomData');
+   $retval = mysql_query($sql, $conn); 
+   if (!$retval ) {
+      die('Could not get data: ' . mysql_error());
+   }
+   while($row = mysql_fetch_assoc($retval)) {
+      echo "Room Number :{$row['roomNumber']}  <br> ".
+         "Lamp : {$row['lamp']} <br> ".
+         "TV : {$row['tv']} <br> ". 
+         "Room Light :{$row['roomLight']}  <br> ".
+         "AC Unit : {$row['acUnit']} <br> ".
+         "--------------------------------<br>"; 
+   }
+   echo "Fetched data successfully\n";
+   mysql_close($conn);
+?>
+</body>
+</html>
